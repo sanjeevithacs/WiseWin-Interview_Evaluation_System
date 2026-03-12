@@ -21,6 +21,7 @@ tenacity
 # Web Framework
 Flask==2.3.3
 Werkzeug==2.3.7
+gunicorn==23.0.0
 
 # Authentication (built-in modules)
 # No additional packages needed - uses hashlib, json, os, sys, dataclasses, datetime

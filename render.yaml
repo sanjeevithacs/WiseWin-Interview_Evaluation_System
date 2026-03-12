@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: wisewin-interview-evaluation
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: FLASK_SECRET_KEY
+        generateValue: true
+      - key: MAX_UPLOAD_SIZE_MB
+        value: 64
+      - key: GROQ_API_KEY
+        sync: false
+      - key: ADMIN_EMAILS
+        sync: false
