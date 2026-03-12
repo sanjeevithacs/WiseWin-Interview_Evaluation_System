@@ -1,0 +1,726 @@
+{% extends "base.html" %}
+
+{% block title %}Live Interview - WiseWin{% endblock %}
+
+{% block content %}
+<div class="space-y-8">
+    <section id="setup-section" class="rounded-3xl bg-white p-8 shadow-md">
+        <div class="grid gap-8 xl:grid-cols-[1.2fr_0.8fr]">
+            <div>
+                <div class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-700">
+                    <i class="fas fa-video"></i>
+                    Live Interview
+                </div>
+                <h1 class="mt-5 text-3xl font-semibold text-gray-800 sm:text-4xl">Practice a full interview flow with AI evaluation.</h1>
+                <p class="mt-4 max-w-2xl text-sm text-gray-600 sm:text-base">
+                    Upload your resume and job description, then move through communication, technical, behavioral, and MCQ rounds without leaving the dashboard.
+                </p>
+                <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                    <div class="rounded-2xl bg-slate-50 p-5">
+                        <div class="text-sm font-semibold text-slate-900">Interview flow</div>
+                        <p class="mt-2 text-sm text-slate-500">Upload, answer four levels, and finish with a consolidated report.</p>
+                    </div>
+                    <div class="rounded-2xl bg-slate-50 p-5">
+                        <div class="text-sm font-semibold text-slate-900">What you need</div>
+                        <p class="mt-2 text-sm text-slate-500">Resume, job description, camera, microphone, and a quiet environment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-900 to-violet-700 p-6 text-white shadow-panel">
+                <div class="text-sm font-semibold uppercase tracking-[0.22em] text-indigo-100">Readiness</div>
+                <div id="setup-status" class="mt-4 text-sm text-indigo-100">Resume and a job description source are required.</div>
+                <div class="mt-6 space-y-3 text-sm text-indigo-100">
+                    <div class="flex items-center gap-3 rounded-xl bg-white/10 px-4 py-3">
+                        <i class="fas fa-file-lines"></i>
+                        Resume uploaded
+                    </div>
+                    <div class="flex items-center gap-3 rounded-xl bg-white/10 px-4 py-3">
+                        <i class="fas fa-briefcase"></i>
+                        Job description available
+                    </div>
+                    <div class="flex items-center gap-3 rounded-xl bg-white/10 px-4 py-3">
+                        <i class="fas fa-microphone-lines"></i>
+                        Recording permissions ready
+                    </div>
+                </div>
+                <button id="start-interview-btn" class="mt-6 w-full rounded-xl bg-slate-300 px-6 py-3 text-sm font-semibold text-white transition duration-200" disabled>Start Interview</button>
+            </div>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+            <div class="rounded-2xl border border-dashed border-slate-300 p-6 transition duration-200 hover:border-indigo-400 hover:bg-indigo-50/40">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
+                    <i class="fas fa-file-arrow-up"></i>
+                </div>
+                <label class="mt-5 block text-lg font-medium text-slate-900">Resume</label>
+                <p class="mt-2 text-sm text-slate-500">Accepted: PDF or DOCX.</p>
+                <input id="resume-upload" type="file" accept=".pdf,.docx" class="mt-5 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-700 file:mr-4 file:rounded-md file:border-0 file:bg-slate-100 file:px-3 file:py-2 file:text-sm file:font-medium">
+                <p id="resume-name" class="mt-4 rounded-xl bg-slate-50 px-4 py-3 text-sm text-slate-600"></p>
+            </div>
+
+            <div class="rounded-2xl border border-dashed border-slate-300 p-6 transition duration-200 hover:border-violet-400 hover:bg-violet-50/40">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-violet-100 text-violet-500">
+                    <i class="fas fa-folder-open"></i>
+                </div>
+                <label class="mt-5 block text-lg font-medium text-slate-900">Job Description File</label>
+                <p class="mt-2 text-sm text-slate-500">Optional if you paste the job description text below.</p>
+                <input id="jd-upload" type="file" accept=".pdf,.docx,.txt" class="mt-5 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-700 file:mr-4 file:rounded-md file:border-0 file:bg-slate-100 file:px-3 file:py-2 file:text-sm file:font-medium">
+                <p id="jd-name" class="mt-4 rounded-xl bg-slate-50 px-4 py-3 text-sm text-slate-600"></p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="interview-section" class="hidden space-y-6">
+        <div class="rounded-xl bg-white p-6 shadow-md">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800">Interview Progress</h2>
+                    <p id="progress-copy" class="mt-1 text-sm text-slate-600"></p>
+                </div>
+                <div id="skill-summary" class="rounded-full bg-slate-100 px-4 py-2 text-sm text-slate-600"></div>
+            </div>
+            <div class="mt-6 grid gap-4 md:grid-cols-4">
+                <div id="progress-level-1" class="rounded-2xl border border-slate-200 p-5 text-center">
+                    <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+                        <i class="fas fa-microphone-lines"></i>
+                    </div>
+                    <div class="mt-4 text-sm font-semibold">Level 1</div>
+                    <div class="text-xs text-slate-500">Introduction</div>
+                </div>
+                <div id="progress-level-2" class="rounded-2xl border border-slate-200 p-5 text-center">
+                    <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="mt-4 text-sm font-semibold">Level 2</div>
+                    <div class="text-xs text-slate-500">Technical Viva</div>
+                </div>
+                <div id="progress-level-3" class="rounded-2xl border border-slate-200 p-5 text-center">
+                    <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+                        <i class="fas fa-people-arrows"></i>
+                    </div>
+                    <div class="mt-4 text-sm font-semibold">Level 3</div>
+                    <div class="text-xs text-slate-500">Behavioral</div>
+                </div>
+                <div id="progress-level-4" class="rounded-2xl border border-slate-200 p-5 text-center">
+                    <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+                        <i class="fas fa-list-check"></i>
+                    </div>
+                    <div class="mt-4 text-sm font-semibold">Level 4</div>
+                    <div class="text-xs text-slate-500">MCQ Round</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="level-shell" class="rounded-xl bg-white p-8 shadow-md"></div>
+    </section>
+
+    <section id="report-section" class="hidden rounded-xl bg-white p-8 shadow-md">
+        <div class="flex flex-wrap items-start justify-between gap-4">
+            <div>
+                <h2 class="text-3xl font-semibold text-gray-800">Final Interview Evaluation Report</h2>
+                <p class="mt-2 text-sm text-slate-600">A combined view of communication, technical depth, confidence, behavioral fit, and MCQ accuracy.</p>
+            </div>
+            <a href="{{ url_for('view_results') }}" class="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-200">
+                View Saved Results
+            </a>
+        </div>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-3">
+            <div class="rounded-2xl bg-slate-50 p-6">
+                <div class="text-sm text-slate-500">Communication Score</div>
+                <div id="report-communication" class="mt-2 text-3xl font-bold text-slate-900">0</div>
+            </div>
+            <div class="rounded-2xl bg-slate-50 p-6">
+                <div class="text-sm text-slate-500">Technical Knowledge Score</div>
+                <div id="report-technical" class="mt-2 text-3xl font-bold text-slate-900">0</div>
+            </div>
+            <div class="rounded-2xl bg-slate-50 p-6">
+                <div class="text-sm text-slate-500">Confidence Score</div>
+                <div id="report-confidence" class="mt-2 text-3xl font-bold text-slate-900">0</div>
+            </div>
+            <div class="rounded-2xl bg-slate-50 p-6">
+                <div class="text-sm text-slate-500">Behavioral Score</div>
+                <div id="report-behavioral" class="mt-2 text-3xl font-bold text-slate-900">0</div>
+            </div>
+            <div class="rounded-2xl bg-slate-50 p-6">
+                <div class="text-sm text-slate-500">MCQ Score</div>
+                <div id="report-mcq" class="mt-2 text-3xl font-bold text-slate-900">0</div>
+            </div>
+            <div class="rounded-2xl bg-emerald-50 p-6">
+                <div class="text-sm text-emerald-700">Overall Rating</div>
+                <div id="report-overall" class="mt-2 text-3xl font-bold text-emerald-700">0</div>
+            </div>
+        </div>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+            <div class="rounded-2xl border border-slate-200 p-6">
+                <h3 class="text-lg font-semibold text-slate-900">Improvement Suggestions</h3>
+                <ul id="report-suggestions" class="mt-4 space-y-3 text-sm text-slate-700"></ul>
+            </div>
+            <div class="rounded-2xl border border-slate-200 p-6">
+                <h3 class="text-lg font-semibold text-slate-900">Level Scores</h3>
+                <div id="report-level-scores" class="mt-4 space-y-3 text-sm text-slate-700"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div id="loading-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40">
+    <div class="rounded-2xl bg-white px-8 py-6 shadow-xl">
+        <div class="text-sm font-semibold text-slate-900" id="loading-message">Processing...</div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/media_recorder.js') }}"></script>
+<script>
+const appState = {
+    resumeFile: null,
+    jdFile: null,
+    questions: null,
+    structuredData: null,
+    currentLevel: 1,
+    currentQuestionIndex: 0,
+    recordings: {
+        1: [],
+        2: [],
+        3: []
+    },
+    scores: {},
+    levelBreakdowns: {},
+    feedback: {},
+    suggestions: {},
+    mcqAnswers: {},
+    mcqDeadline: null,
+    mcqInterval: null
+};
+
+let mediaRecorder = null;
+let activeRecordingContext = null;
+
+function $(id) {
+    return document.getElementById(id);
+}
+
+function showLoading(message) {
+    $('loading-message').textContent = message;
+    $('loading-modal').style.display = 'flex';
+}
+
+function hideLoading() {
+    $('loading-modal').style.display = 'none';
+}
+
+function formatClock(totalSeconds) {
+    const seconds = Math.max(0, totalSeconds);
+    const minutes = Math.floor(seconds / 60);
+    const remainder = seconds % 60;
+    return `${String(minutes).padStart(2, '0')}:${String(remainder).padStart(2, '0')}`;
+}
+
+function updateSetupState() {
+    const hasResume = !!appState.resumeFile;
+    const hasJobDescription = !!appState.jdFile;
+    const canStart = hasResume && hasJobDescription;
+
+    $('start-interview-btn').disabled = !canStart;
+    $('start-interview-btn').className = canStart
+        ? 'mt-6 w-full rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-indigo-700'
+        : 'mt-6 w-full rounded-xl bg-slate-300 px-6 py-3 text-sm font-semibold text-white transition duration-200';
+    $('setup-status').textContent = canStart
+        ? 'Ready. Start the live interview flow.'
+        : 'Resume and a job description source are required.';
+}
+
+async function startInterview() {
+    showLoading('Parsing resume and generating interview flow...');
+    try {
+        const formData = new FormData();
+        formData.append('resume', appState.resumeFile);
+        if (appState.jdFile) {
+            formData.append('job_description', appState.jdFile);
+        }
+
+        const response = await fetch('/api/generate-interview-questions', {
+            method: 'POST',
+            body: formData
+        });
+        const data = await response.json();
+
+        if (!data.success) {
+            throw new Error(data.error || 'Question generation failed');
+        }
+
+        appState.questions = data.questions;
+        appState.structuredData = data.structured_data;
+        appState.currentLevel = 1;
+        appState.currentQuestionIndex = 0;
+        appState.recordings = { 1: [], 2: [], 3: [] };
+        appState.scores = {};
+        appState.levelBreakdowns = {};
+        appState.feedback = {};
+        appState.suggestions = {};
+        appState.mcqAnswers = {};
+
+        $('setup-section').classList.add('hidden');
+        $('interview-section').classList.remove('hidden');
+        $('skill-summary').textContent = `Skills: ${(appState.structuredData.candidate_skills || []).slice(0, 6).join(', ') || 'Not detected'}`;
+        renderCurrentLevel();
+    } catch (error) {
+        alert(error.message);
+    } finally {
+        hideLoading();
+    }
+}
+
+function setProgressUI() {
+    for (let level = 1; level <= 4; level += 1) {
+        const card = $(`progress-level-${level}`);
+        const isCurrent = level === appState.currentLevel;
+        const isDone = !!appState.scores[level];
+        card.className = isCurrent
+            ? 'rounded-2xl border border-indigo-600 bg-indigo-50 p-5 text-center shadow-sm'
+            : isDone
+                ? 'rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-center'
+                : 'rounded-2xl border border-slate-200 bg-white p-5 text-center';
+    }
+    $('progress-copy').textContent = `Level ${appState.currentLevel} of 4`;
+}
+
+function ensureRecorder() {
+    if (!mediaRecorder) {
+        mediaRecorder = new InterviewMediaRecorder();
+        mediaRecorder.onTimerUpdate = (elapsedSeconds) => {
+            const levelConfig = appState.questions[`level_${appState.currentLevel}`];
+            const maxDuration = levelConfig.duration_seconds;
+            const remaining = maxDuration - elapsedSeconds;
+            const timer = $('recording-timer');
+            const status = $('recording-status');
+            if (timer) {
+                timer.textContent = formatClock(remaining);
+            }
+            if (status) {
+                status.textContent = remaining > 0 ? 'Recording in progress' : 'Finalizing recording';
+            }
+        };
+        mediaRecorder.onRecordingComplete = async (result) => {
+            if (!activeRecordingContext) {
+                return;
+            }
+            const { level, questionIndex } = activeRecordingContext;
+            await saveRecording(level, questionIndex, result);
+            activeRecordingContext = null;
+            renderCurrentLevel();
+        };
+    }
+    return mediaRecorder;
+}
+
+function renderCurrentLevel() {
+    setProgressUI();
+    const shell = $('level-shell');
+    if (appState.currentLevel <= 3) {
+        renderRecordingLevel(shell, appState.currentLevel);
+    } else {
+        renderMcqLevel(shell);
+    }
+}
+
+function isRecordingInProgress() {
+    return !!(mediaRecorder && mediaRecorder.isRecording);
+}
+
+function renderRecordingLevel(shell, level) {
+    const config = appState.questions[`level_${level}`];
+    const questions = config.questions;
+    const question = questions[appState.currentQuestionIndex];
+    const recording = appState.recordings[level][appState.currentQuestionIndex];
+
+    shell.innerHTML = `
+        <div class="space-y-6">
+            <div class="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                    <div class="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">Level ${level}</div>
+                    <h3 class="mt-2 text-2xl font-semibold text-slate-900">${config.title}</h3>
+                    <p class="mt-2 text-sm text-slate-600">Question ${appState.currentQuestionIndex + 1} of ${questions.length}. Recording limit: ${formatClock(config.duration_seconds)}.</p>
+                </div>
+                <div class="rounded-2xl bg-slate-50 px-5 py-4 text-center">
+                    <div class="text-xs uppercase tracking-[0.18em] text-slate-500">Countdown</div>
+                    <div id="recording-timer" class="mt-2 text-3xl font-semibold text-slate-900">${recording ? formatClock(Math.max(0, config.duration_seconds - recording.duration)) : formatClock(config.duration_seconds)}</div>
+                </div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <p class="text-lg font-medium text-slate-900">${question}</p>
+            </div>
+
+            <div class="grid gap-6 lg:grid-cols-[1.45fr_0.85fr]">
+                <div class="overflow-hidden rounded-2xl bg-slate-950 p-2">
+                    <video id="interview-video" class="aspect-video w-full rounded-xl object-cover" playsinline controls ${recording ? '' : 'muted'}></video>
+                </div>
+                <div class="space-y-4 rounded-2xl border border-slate-200 p-6">
+                    <div>
+                        <div class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Status</div>
+                        <div id="recording-status" class="mt-2 text-sm font-medium text-slate-900">${recording ? 'Recording saved and ready for playback' : 'Ready to record'}</div>
+                    </div>
+                    <button id="record-toggle-btn" class="w-full rounded-xl bg-rose-500 px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-rose-600">Start Recording</button>
+                    <button id="playback-btn" class="w-full rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-indigo-700 ${recording ? '' : 'opacity-50'}" ${recording ? '' : 'disabled'}>Play Recording</button>
+                    <div class="rounded-xl bg-slate-50 px-4 py-3 text-xs text-slate-500">Playback uses the saved local Blob URL first and falls back to the Flask recording URL.</div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <button id="previous-question-btn" class="rounded-xl border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition duration-200 hover:bg-slate-50 ${appState.currentQuestionIndex === 0 ? 'opacity-50' : ''}" ${appState.currentQuestionIndex === 0 ? 'disabled' : ''}>Previous</button>
+                <div class="flex flex-wrap gap-3">
+                    <button id="next-question-btn" class="rounded-xl border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition duration-200 hover:bg-slate-50 ${appState.currentQuestionIndex === questions.length - 1 ? 'opacity-50' : ''}" ${appState.currentQuestionIndex === questions.length - 1 ? 'disabled' : ''}>Next Question</button>
+                    <button id="complete-level-btn" class="rounded-xl bg-emerald-500 px-5 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-emerald-600">Complete Level ${level}</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    const video = $('interview-video');
+    if (recording) {
+        video.src = recording.recordingUrl || recording.blobUrl || '';
+    } else {
+        video.removeAttribute('src');
+        video.load();
+    }
+
+    $('record-toggle-btn').addEventListener('click', async () => {
+        await toggleRecording(level);
+    });
+    $('playback-btn').addEventListener('click', () => playRecording(level));
+    $('previous-question-btn').addEventListener('click', () => {
+        if (isRecordingInProgress()) {
+            alert('Stop the current recording before changing questions.');
+            return;
+        }
+        appState.currentQuestionIndex -= 1;
+        renderCurrentLevel();
+    });
+    $('next-question-btn').addEventListener('click', () => {
+        if (isRecordingInProgress()) {
+            alert('Stop the current recording before changing questions.');
+            return;
+        }
+        appState.currentQuestionIndex += 1;
+        renderCurrentLevel();
+    });
+    $('complete-level-btn').addEventListener('click', () => completeRecordingLevel(level));
+}
+
+async function toggleRecording(level) {
+    const config = appState.questions[`level_${level}`];
+    const video = $('interview-video');
+    const button = $('record-toggle-btn');
+    const status = $('recording-status');
+    const recorder = ensureRecorder();
+
+    if (recorder.isRecording) {
+        button.disabled = true;
+        status.textContent = 'Stopping recording...';
+        await recorder.stopRecording();
+        return;
+    }
+
+    activeRecordingContext = {
+        level,
+        questionIndex: appState.currentQuestionIndex
+    };
+    await recorder.startRecording({ maxDuration: config.duration_seconds });
+    video.srcObject = recorder.stream;
+    video.muted = true;
+    await video.play();
+    button.textContent = 'Stop Recording';
+    button.className = 'w-full rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-slate-800';
+    status.textContent = 'Recording in progress';
+}
+
+async function saveRecording(level, questionIndex, result) {
+    if (!result || !result.blob) {
+        throw new Error('No recording was captured.');
+    }
+
+    showLoading('Uploading recording...');
+    try {
+        const extension = result.mimeType.includes('mp4') ? 'mp4' : 'webm';
+        const formData = new FormData();
+        formData.append('recording', result.blob, `level_${level}_question_${questionIndex}.${extension}`);
+        formData.append('level', String(level));
+        formData.append('question_index', String(questionIndex));
+
+        const response = await fetch('/api/upload-recording', {
+            method: 'POST',
+            body: formData
+        });
+        const data = await response.json();
+        if (!data.success) {
+            throw new Error(data.error || 'Failed to save recording');
+        }
+
+        appState.recordings[level][questionIndex] = {
+            duration: result.duration,
+            mimeType: result.mimeType,
+            blobUrl: result.blobUrl,
+            recordingUrl: data.recording_url
+        };
+    } finally {
+        hideLoading();
+    }
+}
+
+function playRecording(level) {
+    const recording = appState.recordings[level][appState.currentQuestionIndex];
+    if (!recording) {
+        alert('Record an answer first.');
+        return;
+    }
+
+    const video = $('interview-video');
+    video.srcObject = null;
+    video.muted = false;
+    video.src = recording.recordingUrl || recording.blobUrl;
+    video.play().catch((error) => alert(`Playback failed: ${error.message}`));
+    $('recording-status').textContent = 'Playing saved response';
+}
+
+async function completeRecordingLevel(level) {
+    if (isRecordingInProgress()) {
+        alert('Stop the current recording before completing the level.');
+        return;
+    }
+    const config = appState.questions[`level_${level}`];
+    const responses = config.questions.map((_, index) => appState.recordings[level][index]).filter(Boolean);
+    if (responses.length !== config.questions.length) {
+        alert('Complete and save every recording in this level before continuing.');
+        return;
+    }
+
+    showLoading(`Evaluating Level ${level}...`);
+    try {
+        const response = await fetch('/api/evaluate-level', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                level,
+                responses,
+                structured_data: appState.structuredData
+            })
+        });
+        const data = await response.json();
+        if (!data.success) {
+            throw new Error(data.error || `Level ${level} evaluation failed`);
+        }
+
+        appState.scores[level] = data.score;
+        appState.levelBreakdowns[level] = data.level_breakdown || {};
+        appState.feedback[level] = data.feedback || [];
+        appState.suggestions[level] = data.improvement_suggestions || [];
+
+        if (level < 3) {
+            appState.currentLevel += 1;
+            appState.currentQuestionIndex = 0;
+            renderCurrentLevel();
+        } else {
+            appState.currentLevel = 4;
+            appState.currentQuestionIndex = 0;
+            renderCurrentLevel();
+        }
+    } catch (error) {
+        alert(error.message);
+    } finally {
+        hideLoading();
+    }
+}
+
+function renderMcqLevel(shell) {
+    const config = appState.questions.level_4;
+    const questions = config.questions;
+
+    if (!appState.mcqDeadline) {
+        appState.mcqDeadline = Date.now() + (config.duration_seconds * 1000);
+        startMcqTimer();
+    }
+
+    shell.innerHTML = `
+        <div class="space-y-6">
+            <div class="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                    <div class="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">Level 4</div>
+                    <h3 class="mt-2 text-2xl font-semibold text-slate-900">${config.title}</h3>
+                    <p class="mt-2 text-sm text-slate-600">Answer all 15 MCQs within 10 minutes. The test auto-submits when the timer ends.</p>
+                </div>
+                <div class="rounded-2xl bg-amber-50 px-5 py-4 text-center">
+                    <div class="text-xs uppercase tracking-[0.18em] text-amber-700">Time Left</div>
+                    <div id="mcq-timer" class="mt-2 text-3xl font-semibold text-amber-700">${formatClock(Math.round((appState.mcqDeadline - Date.now()) / 1000))}</div>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                ${questions.map((question) => `
+                    <div class="rounded-2xl border border-slate-200 p-6">
+                        <div class="font-semibold text-slate-900">${question.id}. ${question.question}</div>
+                        <div class="mt-4 space-y-3">
+                            ${question.options.map((option, optionIndex) => `
+                                <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 px-4 py-3 transition duration-200 hover:border-indigo-300 hover:bg-indigo-50/40">
+                                    <input type="radio" name="mcq-${question.id}" value="${optionIndex}" ${String(appState.mcqAnswers[question.id]) === String(optionIndex) ? 'checked' : ''}>
+                                    <span class="text-sm text-slate-700">${option}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+
+            <div class="flex justify-end">
+                <button id="submit-mcq-btn" class="rounded-xl bg-emerald-500 px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-emerald-600">Submit MCQ Round</button>
+            </div>
+        </div>
+    `;
+
+    questions.forEach((question) => {
+        document.querySelectorAll(`input[name="mcq-${question.id}"]`).forEach((input) => {
+            input.addEventListener('change', (event) => {
+                appState.mcqAnswers[question.id] = Number(event.target.value);
+            });
+        });
+    });
+
+    $('submit-mcq-btn').addEventListener('click', submitMcqLevel);
+}
+
+function startMcqTimer() {
+    if (appState.mcqInterval) {
+        clearInterval(appState.mcqInterval);
+    }
+
+    appState.mcqInterval = setInterval(() => {
+        const remaining = Math.round((appState.mcqDeadline - Date.now()) / 1000);
+        const timer = $('mcq-timer');
+        if (timer) {
+            timer.textContent = formatClock(remaining);
+        }
+        if (remaining <= 0) {
+            clearInterval(appState.mcqInterval);
+            submitMcqLevel(true);
+        }
+    }, 500);
+}
+
+async function submitMcqLevel(isAutoSubmit = false) {
+    const totalQuestions = appState.questions.level_4.questions.length;
+    if (!isAutoSubmit && Object.keys(appState.mcqAnswers).length < totalQuestions) {
+        const proceed = confirm('Some MCQs are unanswered. Submit anyway?');
+        if (!proceed) {
+            return;
+        }
+    }
+
+    showLoading(isAutoSubmit ? 'Time ended. Submitting MCQ round...' : 'Submitting MCQ round...');
+    try {
+        const response = await fetch('/api/evaluate-level', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                level: 4,
+                responses: appState.mcqAnswers,
+                structured_data: appState.structuredData
+            })
+        });
+        const data = await response.json();
+        if (!data.success) {
+            throw new Error(data.error || 'MCQ evaluation failed');
+        }
+
+        clearInterval(appState.mcqInterval);
+        appState.scores[4] = data.score;
+        appState.levelBreakdowns[4] = data.level_breakdown || {};
+        appState.feedback[4] = data.feedback || [];
+        appState.suggestions[4] = data.improvement_suggestions || [];
+        renderReport();
+    } catch (error) {
+        alert(error.message);
+    } finally {
+        hideLoading();
+    }
+}
+
+function renderReport() {
+    $('interview-section').classList.add('hidden');
+    $('report-section').classList.remove('hidden');
+
+    const level1 = appState.scores[1] || 0;
+    const level2 = appState.scores[2] || 0;
+    const level3 = appState.scores[3] || 0;
+    const level4 = appState.scores[4] || 0;
+    const overall = Math.round((level1 + level2 + level3 + level4) / 4);
+    const passingThreshold = appState.structuredData?.passing_threshold || 70;
+
+    const communication = Math.round((((appState.levelBreakdowns[1]?.communication || 0) + (appState.levelBreakdowns[2]?.communication || 0) + (appState.levelBreakdowns[3]?.communication || 0)) / 3) || 0);
+    const technical = Math.round(((appState.levelBreakdowns[2]?.technical_knowledge || 0) * 1.4) + (level4 * 0.3));
+    const confidence = Math.round((((appState.levelBreakdowns[1]?.confidence || 0) + (appState.levelBreakdowns[2]?.confidence || 0)) / 2) || 0);
+    const behavioral = Math.round((appState.levelBreakdowns[3]?.behavioral_intelligence || level3));
+
+    $('report-communication').textContent = `${communication}`;
+    $('report-technical').textContent = `${Math.min(100, technical)}`;
+    $('report-confidence').textContent = `${confidence}`;
+    $('report-behavioral').textContent = `${behavioral}`;
+    $('report-mcq').textContent = `${level4}`;
+    $('report-overall').textContent = `${overall}%`;
+
+    const scoreElements = [
+        { id: 'report-communication', value: communication },
+        { id: 'report-technical', value: Math.min(100, technical) },
+        { id: 'report-confidence', value: confidence },
+        { id: 'report-behavioral', value: behavioral },
+        { id: 'report-mcq', value: level4 },
+        { id: 'report-overall', value: overall }
+    ];
+
+    scoreElements.forEach(({ id, value }) => {
+        const element = $(id);
+        element.classList.remove('text-slate-900', 'text-emerald-700', 'text-red-600');
+        element.classList.add(value < passingThreshold ? 'text-red-600' : 'text-slate-900');
+    });
+    $('report-overall').classList.remove('text-slate-900');
+    $('report-overall').classList.add(overall < passingThreshold ? 'text-red-600' : 'text-emerald-700');
+
+    const suggestions = new Set();
+    Object.values(appState.suggestions).flat().forEach((item) => {
+        if (typeof item === 'string' && item.trim()) {
+            suggestions.add(item.trim());
+        }
+    });
+    const suggestionItems = Array.from(suggestions).slice(0, 6);
+    $('report-suggestions').innerHTML = suggestionItems.length
+        ? suggestionItems.map((item) => `<li class="rounded-xl bg-slate-50 px-4 py-3">${item}</li>`).join('')
+        : '<li class="rounded-xl bg-slate-50 px-4 py-3">No major improvement point was detected from the submitted interview data.</li>';
+
+    $('report-level-scores').innerHTML = [1, 2, 3, 4].map((level) => `
+        <div class="flex items-center justify-between rounded-xl bg-slate-50 px-4 py-3">
+            <span>Level ${level}</span>
+            <span class="font-semibold ${(appState.scores[level] || 0) < passingThreshold ? 'text-red-600' : 'text-slate-900'}">${appState.scores[level] || 0}%</span>
+        </div>
+    `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    $('resume-upload').addEventListener('change', (event) => {
+        appState.resumeFile = event.target.files[0] || null;
+        $('resume-name').textContent = appState.resumeFile ? appState.resumeFile.name : '';
+        updateSetupState();
+    });
+
+    $('jd-upload').addEventListener('change', (event) => {
+        appState.jdFile = event.target.files[0] || null;
+        $('jd-name').textContent = appState.jdFile ? appState.jdFile.name : '';
+        updateSetupState();
+    });
+
+    $('start-interview-btn').addEventListener('click', startInterview);
+    updateSetupState();
+});
+</script>
+{% endblock %}

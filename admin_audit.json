@@ -1,0 +1,58 @@
+[
+  {
+    "audit_id": "938c76f9-d249-4f11-b743-d07848385684",
+    "admin_email": "admin@wisewin.com",
+    "action": "delete_user",
+    "target": "sanjsiva123@gmail.com",
+    "metadata": {},
+    "created_at": "2026-03-11T14:16:02.658677"
+  },
+  {
+    "audit_id": "b858e749-329a-49eb-85ef-34f4cbc521e6",
+    "admin_email": "admin@wisewin.com",
+    "action": "set_feedback_status",
+    "target": "3e355543-25a9-453c-bc5a-8936ef481827",
+    "metadata": {
+      "status": "resolved"
+    },
+    "created_at": "2026-03-11T14:16:18.899212"
+  },
+  {
+    "audit_id": "85044322-0084-4fe6-b1f4-1c37283753b9",
+    "admin_email": "admin@wisewin.com",
+    "action": "create_user",
+    "target": "abcxz@gmail.com",
+    "metadata": {
+      "role": "user"
+    },
+    "created_at": "2026-03-11T19:21:21.026078"
+  },
+  {
+    "audit_id": "8cf18f14-39f6-4e14-9664-e3a5d5cdfcf7",
+    "admin_email": "admin@wisewin.com",
+    "action": "set_role",
+    "target": "abcxz@gmail.com",
+    "metadata": {
+      "role": "admin"
+    },
+    "created_at": "2026-03-11T19:21:52.008873"
+  },
+  {
+    "audit_id": "ecea5d1e-8131-452c-9290-83a7d5752f66",
+    "admin_email": "admin@wisewin.com",
+    "action": "set_active",
+    "target": "abcxz@gmail.com",
+    "metadata": {
+      "is_active": false
+    },
+    "created_at": "2026-03-11T19:21:58.697911"
+  },
+  {
+    "audit_id": "5cb24ffc-8a2e-49e5-9a3b-a2a50690a53a",
+    "admin_email": "admin@wisewin.com",
+    "action": "delete_user",
+    "target": "abcxz@gmail.com",
+    "metadata": {},
+    "created_at": "2026-03-11T19:22:09.851662"
+  }
+]

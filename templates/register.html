@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Register - WiseWin{% endblock %}
+
+{% block content %}
+<div class="mx-auto max-w-5xl">
+    <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <section class="hidden rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-900 to-violet-700 p-10 text-white shadow-panel lg:block">
+            <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-100">
+                <i class="fas fa-user-plus"></i>
+                Create Workspace
+            </div>
+            <h1 class="mt-6 text-4xl font-semibold leading-tight">Start preparing for interviews with a structured AI workflow.</h1>
+            <p class="mt-4 text-sm text-indigo-100">
+                Create your account to access resume analysis, live mock interviews, score tracking, and admin support.
+            </p>
+        </section>
+
+        <section class="rounded-3xl bg-white p-8 shadow-md sm:p-10">
+            <div class="text-center">
+                <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-100 text-2xl text-indigo-600">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h1 class="mt-5 text-3xl font-semibold text-gray-800">Create account</h1>
+                <p class="mt-2 text-sm text-gray-600">Set up your WiseWin workspace in a few steps.</p>
+            </div>
+
+            <form method="POST" action="{{ url_for('register') }}" class="mt-8 space-y-5">
+                <div class="grid gap-5 sm:grid-cols-2">
+                    <div>
+                        <label for="name" class="mb-2 block text-sm font-semibold text-gray-700">First Name</label>
+                        <input type="text" id="name" name="name" required class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200" placeholder="First name">
+                    </div>
+                    <div>
+                        <label for="surname" class="mb-2 block text-sm font-semibold text-gray-700">Last Name</label>
+                        <input type="text" id="surname" name="surname" required class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200" placeholder="Last name">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="email" class="mb-2 block text-sm font-semibold text-gray-700">Email Address</label>
+                    <input type="email" id="email" name="email" required class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200" placeholder="Enter your email">
+                </div>
+
+                <div>
+                    <label for="password" class="mb-2 block text-sm font-semibold text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" required class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200" placeholder="Enter your password (min 6 characters)">
+                </div>
+
+                <div>
+                    <label for="confirm_password" class="mb-2 block text-sm font-semibold text-gray-700">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200" placeholder="Confirm your password">
+                </div>
+
+                <button type="submit" class="w-full rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-indigo-700">
+                    Create Account
+                </button>
+            </form>
+
+            <p class="mt-6 text-center text-sm text-gray-600">
+                Already have an account?
+                <a href="{{ url_for('login') }}" class="font-semibold text-indigo-600 hover:text-indigo-700">Login here</a>
+            </p>
+        </section>
+    </div>
+</div>
+{% endblock %}

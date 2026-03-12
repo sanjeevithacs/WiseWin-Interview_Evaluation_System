@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+
+{% block title %}Results - WiseWin{% endblock %}
+
+{% block content %}
+<div class="space-y-8">
+    <section class="rounded-3xl bg-gradient-to-br from-white to-slate-100 p-8 shadow-md">
+        <div class="flex flex-wrap items-start justify-between gap-6">
+            <div>
+                <div class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-700">
+                    <i class="fas fa-chart-line"></i>
+                    Analysis Report
+                </div>
+                <h1 class="mt-5 text-3xl font-semibold text-gray-800">Resume analysis results</h1>
+                <p class="mt-3 text-sm text-gray-600">Detailed fit and qualification feedback for {{ user_info.name }} {{ user_info.surname }}.</p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <a href="{{ url_for('analyze') }}" class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700">Analyze Another</a>
+                {% if analysis_id %}
+                <a href="{{ url_for('export_analysis', analysis_id=analysis_id) }}" class="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-600">Export JSON</a>
+                {% endif %}
+                <button onclick="window.print()" class="rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-200">Print</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+            <div class="rounded-xl bg-white p-6 shadow-md">
+                <h2 class="text-lg font-medium text-gray-800">Match Score</h2>
+                <div class="mt-6 flex items-center justify-center">
+                    <div class="relative">
+                        <svg class="h-32 w-32">
+                            <circle cx="64" cy="64" r="56" stroke="#e5e7eb" stroke-width="8" fill="none"></circle>
+                            <circle cx="64" cy="64" r="56" stroke="#4f46e5" stroke-width="8" fill="none"
+                                stroke-dasharray="{{ (analysis.score_one.total_match_score / 100) * 351.86 }} 351.86"
+                                stroke-dashoffset="87.96" stroke-linecap="round" transform="rotate(-90 64 64)"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-3xl font-semibold text-indigo-600">{{ "%.1f"|format(analysis.score_one.total_match_score) }}%</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-4 text-center text-sm text-gray-600">Resume-to-role alignment</p>
+            </div>
+
+            <div class="rounded-xl bg-white p-6 shadow-md">
+                <h2 class="text-lg font-medium text-gray-800">Qualification Score</h2>
+                <div class="mt-6 flex items-center justify-center">
+                    <div class="relative">
+                        <svg class="h-32 w-32">
+                            <circle cx="64" cy="64" r="56" stroke="#e5e7eb" stroke-width="8" fill="none"></circle>
+                            <circle cx="64" cy="64" r="56" stroke="#10b981" stroke-width="8" fill="none"
+                                stroke-dasharray="{{ (analysis.score_two.total_qualification_score / 100) * 351.86 }} 351.86"
+                                stroke-dashoffset="87.96" stroke-linecap="round" transform="rotate(-90 64 64)"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-3xl font-semibold text-emerald-500">{{ "%.1f"|format(analysis.score_two.total_qualification_score) }}%</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-4 text-center text-sm text-gray-600">Overall qualification fit</p>
+            </div>
+        </div>
+
+        <div class="rounded-xl bg-white p-6 shadow-md">
+            <div class="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                    <h2 class="text-lg font-medium text-gray-800">Recommendation Summary</h2>
+                    <p class="mt-1 text-sm text-gray-600">A quick view of your current fit before reviewing the full breakdown.</p>
+                </div>
+                {% if analysis.score_one.total_match_score >= 80 %}
+                <span class="rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-700">Excellent Match</span>
+                {% elif analysis.score_one.total_match_score >= 70 %}
+                <span class="rounded-full bg-amber-100 px-4 py-2 text-sm font-semibold text-amber-700">Improvement Needed</span>
+                {% else %}
+                <span class="rounded-full bg-rose-100 px-4 py-2 text-sm font-semibold text-rose-700">Significant Gaps</span>
+                {% endif %}
+            </div>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="rounded-2xl bg-slate-50 p-5">
+                    <div class="text-sm text-slate-500">Resume Skills</div>
+                    <div class="mt-2 text-3xl font-semibold text-slate-900">{{ diagnostics.resume_skill_count or 0 }}</div>
+                </div>
+                <div class="rounded-2xl bg-slate-50 p-5">
+                    <div class="text-sm text-slate-500">Job Description Skills</div>
+                    <div class="mt-2 text-3xl font-semibold text-slate-900">{{ diagnostics.job_skill_count or 0 }}</div>
+                </div>
+                <div class="rounded-2xl bg-slate-50 p-5">
+                    <div class="text-sm text-slate-500">Matched Skills</div>
+                    <div class="mt-2 text-3xl font-semibold text-emerald-600">{{ diagnostics.matched_skill_count or 0 }}</div>
+                </div>
+                <div class="rounded-2xl bg-slate-50 p-5">
+                    <div class="text-sm text-slate-500">Missing Skills</div>
+                    <div class="mt-2 text-3xl font-semibold text-rose-500">{{ diagnostics.missing_skill_count or 0 }}</div>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <div class="text-sm font-medium text-slate-800">Top matched skills</div>
+                <div class="mt-3 flex flex-wrap gap-2">
+                    {% for item in diagnostics.matched_skills or [] %}
+                    <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700">{{ item }}</span>
+                    {% else %}
+                    <span class="text-sm text-slate-500">No strong matched skills detected.</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <div class="text-sm font-medium text-slate-800">Top missing skills</div>
+                <div class="mt-3 flex flex-wrap gap-2">
+                    {% for item in diagnostics.missing_skills or [] %}
+                    <span class="rounded-full bg-rose-100 px-3 py-1 text-xs font-medium text-rose-700">{{ item }}</span>
+                    {% else %}
+                    <span class="text-sm text-slate-500">No major missing skills detected.</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid gap-8 xl:grid-cols-2">
+        <article class="rounded-xl bg-white p-6 shadow-md">
+            <h2 class="text-lg font-medium text-gray-800">Resume + Job Match Details</h2>
+            <div class="mt-6 space-y-5">
+                {% for factor_name, factor in analysis.score_one.items() %}
+                    {% if factor_name != 'total_match_score' %}
+                    <div class="rounded-2xl border border-slate-200 p-5">
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-sm font-semibold text-slate-900">{{ factor.name.replace('_', ' ').title() }}</h3>
+                            <span class="text-sm font-semibold text-indigo-600">{{ "%.1f"|format(factor.score) }}%</span>
+                        </div>
+                        <div class="mt-4 h-2 rounded-full bg-slate-200">
+                            <div class="h-2 rounded-full bg-indigo-600" style="width: {{ factor.score }}%"></div>
+                        </div>
+                        <p class="mt-4 text-sm text-slate-600">{{ factor.feedback }}</p>
+                        {% if factor.evidence %}
+                        <div class="mt-4 rounded-xl bg-emerald-50 p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">Evidence</p>
+                            <ul class="mt-2 space-y-2 text-sm text-emerald-700">
+                                {% for evidence in factor.evidence %}
+                                <li>{{ evidence }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                        {% if factor.missing %}
+                        <div class="mt-4 rounded-xl bg-rose-50 p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-rose-700">Missing</p>
+                            <ul class="mt-2 space-y-2 text-sm text-rose-700">
+                                {% for missing in factor.missing %}
+                                <li>{{ missing }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </article>
+
+        <article class="rounded-xl bg-white p-6 shadow-md">
+            <h2 class="text-lg font-medium text-gray-800">Qualification Assessment</h2>
+            <div class="mt-6 space-y-5">
+                {% for factor_name, factor in analysis.score_two.items() %}
+                    {% if factor_name != 'total_qualification_score' %}
+                    <div class="rounded-2xl border border-slate-200 p-5">
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-sm font-semibold text-slate-900">{{ factor.name.replace('_', ' ').title() }}</h3>
+                            <span class="text-sm font-semibold text-emerald-600">{{ "%.1f"|format(factor.score) }}%</span>
+                        </div>
+                        <div class="mt-4 h-2 rounded-full bg-slate-200">
+                            <div class="h-2 rounded-full bg-emerald-500" style="width: {{ factor.score }}%"></div>
+                        </div>
+                        <p class="mt-4 text-sm text-slate-600">{{ factor.feedback }}</p>
+                        {% if factor.evidence %}
+                        <div class="mt-4 rounded-xl bg-emerald-50 p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">Evidence</p>
+                            <ul class="mt-2 space-y-2 text-sm text-emerald-700">
+                                {% for evidence in factor.evidence %}
+                                <li>{{ evidence }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                        {% if factor.missing %}
+                        <div class="mt-4 rounded-xl bg-rose-50 p-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-rose-700">Missing</p>
+                            <ul class="mt-2 space-y-2 text-sm text-rose-700">
+                                {% for missing in factor.missing %}
+                                <li>{{ missing }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </article>
+    </section>
+
+    <section class="grid gap-8 xl:grid-cols-[1fr_0.9fr]">
+        <article class="rounded-xl bg-white p-6 shadow-md">
+            <h2 class="text-lg font-medium text-gray-800">Recommendations</h2>
+            <div class="mt-6 space-y-3">
+                {% for recommendation in analysis.recommendations %}
+                <div class="flex gap-4 rounded-2xl bg-slate-50 px-4 py-4">
+                    <div class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100 text-sm font-semibold text-amber-700">{{ loop.index }}</div>
+                    <p class="text-sm text-slate-700">{{ recommendation }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </article>
+
+        <article class="rounded-xl bg-white p-6 shadow-md">
+            <h2 class="text-lg font-medium text-gray-800">Send Query to Admin</h2>
+            <form method="POST" action="{{ url_for('submit_feedback') }}" class="mt-6 space-y-4">
+                <input type="hidden" name="analysis_id" value="{{ analysis_id }}">
+                <input type="hidden" name="source_page" value="results">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Category</label>
+                    <select name="category" class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                        <option value="analysis">Analysis Quality</option>
+                        <option value="suggestion">Suggestions</option>
+                        <option value="bug">Bug Report</option>
+                        <option value="general">General Feedback</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Your Query / Message</label>
+                    <textarea name="message" rows="5" class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200" placeholder="Tell the admin if this analysis was useful, inaccurate, or missing something."></textarea>
+                </div>
+                <button type="submit" class="rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700">Send to Admin</button>
+            </form>
+
+            <div class="mt-8">
+                <h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">Recent Queries</h3>
+                <div class="mt-4 space-y-3">
+                    {% for item in user_feedback %}
+                    <div class="rounded-xl bg-slate-50 px-4 py-4">
+                        <div class="text-xs uppercase tracking-[0.18em] text-slate-500">{{ item.category }}</div>
+                        <div class="mt-2 text-sm text-slate-700">{{ item.message }}</div>
+                    </div>
+                    {% else %}
+                    <div class="rounded-xl bg-slate-50 px-4 py-4 text-sm text-slate-500">No feedback submitted yet.</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+    </section>
+</div>
+{% endblock %}

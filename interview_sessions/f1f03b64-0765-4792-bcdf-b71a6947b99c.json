@@ -1,0 +1,581 @@
+{
+  "session_id": "f1f03b64-0765-4792-bcdf-b71a6947b99c",
+  "user_email": "sanjeevitha.cs2023ai-ds@sece.ac.in",
+  "created_at": "2026-03-11T19:30:15.762114",
+  "status": "level_2_in_progress",
+  "structured_data": {
+    "candidate_name": "Sanjeevitha Sivakumar",
+    "candidate_skills": [
+      "JavaScript",
+      "Python",
+      "Java",
+      "C++",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "React",
+      "Node.js",
+      "Express.js",
+      "Flask",
+      "REST APIs",
+      "MongoDB",
+      "MySQL",
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Postman",
+      "Node",
+      "Rest",
+      "Tailwind",
+      "C",
+      "Languages - JavaScript",
+      "Frontend - HTML",
+      "Backend - Node.js",
+      "Database - MongoDB",
+      "Tools - Git"
+    ],
+    "experience_years": 0,
+    "education_level": "Bachelor",
+    "job_role": "Job Description: Full Stack Developer",
+    "required_skills": [
+      "Python",
+      "Javascript",
+      "React",
+      "Node.Js",
+      "Node",
+      "Flask",
+      "Django",
+      "Mysql",
+      "Postgresql",
+      "Mongodb",
+      "Git",
+      "Html",
+      "Css",
+      "Design, develop, and maintain web applications",
+      "Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks",
+      "Develop backend services using Node.js, Python (Flask/Django), or similar technologies",
+      "Design and manage databases (MySQL, PostgreSQL, MongoDB)",
+      "Implement RESTful APIs and integrate third-party services",
+      "Ensure performance, scalability, and security of applications",
+      "Strong knowledge of JavaScript and modern frontend frameworks",
+      "Experience with backend frameworks and API development",
+      "Understanding of database design and query optimization",
+      "Familiarity with version control (Git)",
+      "Problem-solving and teamwork skills"
+    ],
+    "missing_skills": [
+      "Django",
+      "Postgresql",
+      "Design, develop, and maintain web applications",
+      "Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks",
+      "Develop backend services using Node.js, Python (Flask/Django), or similar technologies",
+      "Design and manage databases (MySQL, PostgreSQL, MongoDB)",
+      "Implement RESTful APIs and integrate third-party services",
+      "Ensure performance, scalability, and security of applications",
+      "Strong knowledge of JavaScript and modern frontend frameworks",
+      "Experience with backend frameworks and API development",
+      "Understanding of database design and query optimization",
+      "Familiarity with version control (Git)",
+      "Problem-solving and teamwork skills"
+    ],
+    "industry": "Technology",
+    "difficulty": "easy",
+    "passing_threshold": 60,
+    "interview_config": {
+      "difficulty": "easy",
+      "experience_level": "Entry Level",
+      "estimated_duration": 30,
+      "levels_enabled": [
+        "level_1",
+        "level_2",
+        "level_3",
+        "level_4"
+      ],
+      "scoring_weights": {
+        "level_1": 0.25,
+        "level_2": 0.25,
+        "level_3": 0.25,
+        "level_4": 0.25
+      },
+      "passing_threshold": 60
+    },
+    "interview_session_id": "f1f03b64-0765-4792-bcdf-b71a6947b99c",
+    "questions": {
+      "level_1": {
+        "title": "Self Introduction",
+        "duration_seconds": 120,
+        "questions": [
+          "Please introduce yourself."
+        ]
+      },
+      "level_2": {
+        "title": "Technical Questions",
+        "duration_seconds": 90,
+        "questions": [
+          "What are the basic features of Java?",
+          "How do you create a class in Java?",
+          "What is the difference between interface and abstract class?"
+        ]
+      },
+      "level_3": {
+        "title": "Behavioral Questions",
+        "duration_seconds": 90,
+        "questions": [
+          "Share a situation where you had to take ownership beyond your formal responsibilities to move a project forward.",
+          "Tell me about a time you had to make a difficult decision while working on Python and how the result affected your team.",
+          "Tell me about a time you had to meet a tight deadline."
+        ]
+      },
+      "level_4": {
+        "title": "Technical MCQ Round",
+        "duration_seconds": 600,
+        "questions": [
+          {
+            "id": 1,
+            "question": "The job description emphasizes Python. Which option is the strongest interview response?",
+            "options": [
+              "Claim Python is mostly handled automatically so deep understanding is unnecessary.",
+              "Describe where Python fits in the system, why it was chosen, and what constraints it solved.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Python.",
+              "Give a memorized definition of Python without examples, tradeoffs, or project context."
+            ],
+            "correct_answer": 1,
+            "topic": "Python"
+          },
+          {
+            "id": 2,
+            "question": "The job description emphasizes Javascript. Which option is the strongest interview response?",
+            "options": [
+              "Describe where Javascript fits in the system, why it was chosen, and what constraints it solved.",
+              "Say that Javascript is important but avoid discussing any implementation details or outcomes.",
+              "Give a memorized definition of Javascript without examples, tradeoffs, or project context.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Javascript."
+            ],
+            "correct_answer": 0,
+            "topic": "Javascript"
+          },
+          {
+            "id": 3,
+            "question": "For a Job Description: Full Stack Developer interview, which answer best demonstrates practical understanding of React?",
+            "options": [
+              "Say that React is important but avoid discussing any implementation details or outcomes.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of React.",
+              "Give a memorized definition of React without examples, tradeoffs, or project context.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for React."
+            ],
+            "correct_answer": 3,
+            "topic": "React"
+          },
+          {
+            "id": 4,
+            "question": "Based on this candidate profile and role, which action best shows readiness in Node.Js?",
+            "options": [
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Node.Js.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Node.Js.",
+              "Give a memorized definition of Node.Js without examples, tradeoffs, or project context.",
+              "Say that Node.Js is important but avoid discussing any implementation details or outcomes."
+            ],
+            "correct_answer": 0,
+            "topic": "Node.Js"
+          },
+          {
+            "id": 5,
+            "question": "The job description emphasizes Node. Which option is the strongest interview response?",
+            "options": [
+              "Give a memorized definition of Node without examples, tradeoffs, or project context.",
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Node.",
+              "Claim Node is mostly handled automatically so deep understanding is unnecessary.",
+              "Say that Node is important but avoid discussing any implementation details or outcomes."
+            ],
+            "correct_answer": 1,
+            "topic": "Node"
+          },
+          {
+            "id": 6,
+            "question": "Based on this candidate profile and role, which action best shows readiness in Flask?",
+            "options": [
+              "Say that Flask is important but avoid discussing any implementation details or outcomes.",
+              "Connect Flask to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+              "Give a memorized definition of Flask without examples, tradeoffs, or project context.",
+              "Claim Flask is mostly handled automatically so deep understanding is unnecessary."
+            ],
+            "correct_answer": 1,
+            "topic": "Flask"
+          },
+          {
+            "id": 7,
+            "question": "The job description emphasizes Django. Which option is the strongest interview response?",
+            "options": [
+              "Say that Django is important but avoid discussing any implementation details or outcomes.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Django.",
+              "Claim Django is mostly handled automatically so deep understanding is unnecessary.",
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Django."
+            ],
+            "correct_answer": 3,
+            "topic": "Django"
+          },
+          {
+            "id": 8,
+            "question": "For a Job Description: Full Stack Developer interview, which answer best demonstrates practical understanding of Mysql?",
+            "options": [
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Mysql.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Mysql.",
+              "Claim Mysql is mostly handled automatically so deep understanding is unnecessary.",
+              "Say that Mysql is important but avoid discussing any implementation details or outcomes."
+            ],
+            "correct_answer": 0,
+            "topic": "Mysql"
+          },
+          {
+            "id": 9,
+            "question": "Which statement would be the most credible answer for a Job Description: Full Stack Developer candidate discussing Postgresql?",
+            "options": [
+              "Connect Postgresql to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+              "Say that Postgresql is important but avoid discussing any implementation details or outcomes.",
+              "Claim Postgresql is mostly handled automatically so deep understanding is unnecessary.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Postgresql."
+            ],
+            "correct_answer": 0,
+            "topic": "Postgresql"
+          },
+          {
+            "id": 10,
+            "question": "For a Job Description: Full Stack Developer interview, which answer best demonstrates practical understanding of Mongodb?",
+            "options": [
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Mongodb.",
+              "Say that Mongodb is important but avoid discussing any implementation details or outcomes.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for Mongodb.",
+              "Give a memorized definition of Mongodb without examples, tradeoffs, or project context."
+            ],
+            "correct_answer": 2,
+            "topic": "Mongodb"
+          },
+          {
+            "id": 11,
+            "question": "Which statement would be the most credible answer for a Job Description: Full Stack Developer candidate discussing Git?",
+            "options": [
+              "Say that Git is important but avoid discussing any implementation details or outcomes.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for Git.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Git.",
+              "Give a memorized definition of Git without examples, tradeoffs, or project context."
+            ],
+            "correct_answer": 1,
+            "topic": "Git"
+          },
+          {
+            "id": 12,
+            "question": "Based on this candidate profile and role, which action best shows readiness in Html?",
+            "options": [
+              "Say that Html is important but avoid discussing any implementation details or outcomes.",
+              "Claim Html is mostly handled automatically so deep understanding is unnecessary.",
+              "Describe where Html fits in the system, why it was chosen, and what constraints it solved.",
+              "Give a memorized definition of Html without examples, tradeoffs, or project context."
+            ],
+            "correct_answer": 2,
+            "topic": "Html"
+          },
+          {
+            "id": 13,
+            "question": "The job description emphasizes Css. Which option is the strongest interview response?",
+            "options": [
+              "Say that Css is important but avoid discussing any implementation details or outcomes.",
+              "Claim Css is mostly handled automatically so deep understanding is unnecessary.",
+              "Connect Css to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Css."
+            ],
+            "correct_answer": 2,
+            "topic": "Css"
+          },
+          {
+            "id": 14,
+            "question": "The job description emphasizes Design, develop, and maintain web applications. Which option is the strongest interview response?",
+            "options": [
+              "Give a memorized definition of Design, develop, and maintain web applications without examples, tradeoffs, or project context.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Design, develop, and maintain web applications.",
+              "Claim Design, develop, and maintain web applications is mostly handled automatically so deep understanding is unnecessary.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for Design, develop, and maintain web applications."
+            ],
+            "correct_answer": 3,
+            "topic": "Design, develop, and maintain web applications"
+          },
+          {
+            "id": 15,
+            "question": "Based on this candidate profile and role, which action best shows readiness in Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks?",
+            "options": [
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks.",
+              "Say that Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks is important but avoid discussing any implementation details or outcomes.",
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks.",
+              "Give a memorized definition of Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks without examples, tradeoffs, or project context."
+            ],
+            "correct_answer": 2,
+            "topic": "Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks"
+          }
+        ]
+      }
+    }
+  },
+  "current_level": 2,
+  "level_results": {
+    "level_1": {
+      "score": 5.0,
+      "feedback": [
+        "Responses were extremely short and were scored very strictly."
+      ],
+      "evidence": {
+        "responses_recorded": 1,
+        "average_duration_seconds": 2.0,
+        "completion_ratio": 1.0
+      },
+      "level_breakdown": {
+        "communication": 5.0,
+        "confidence": 1.0,
+        "body_language": 0
+      },
+      "improvement_suggestions": [
+        "Spend longer on each answer and explain your reasoning before ending the recording.",
+        "Open with a tighter summary of your background, current strengths, and fit for the role."
+      ],
+      "total_score": 5.0
+    }
+  },
+  "questions": {
+    "level_1": {
+      "title": "Self Introduction",
+      "duration_seconds": 120,
+      "questions": [
+        "Please introduce yourself."
+      ]
+    },
+    "level_2": {
+      "title": "Technical Questions",
+      "duration_seconds": 90,
+      "questions": [
+        "What are the basic features of Java?",
+        "How do you create a class in Java?",
+        "What is the difference between interface and abstract class?"
+      ]
+    },
+    "level_3": {
+      "title": "Behavioral Questions",
+      "duration_seconds": 90,
+      "questions": [
+        "Share a situation where you had to take ownership beyond your formal responsibilities to move a project forward.",
+        "Tell me about a time you had to make a difficult decision while working on Python and how the result affected your team.",
+        "Tell me about a time you had to meet a tight deadline."
+      ]
+    },
+    "level_4": {
+      "title": "Technical MCQ Round",
+      "duration_seconds": 600,
+      "questions": [
+        {
+          "id": 1,
+          "question": "The job description emphasizes Python. Which option is the strongest interview response?",
+          "options": [
+            "Claim Python is mostly handled automatically so deep understanding is unnecessary.",
+            "Describe where Python fits in the system, why it was chosen, and what constraints it solved.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Python.",
+            "Give a memorized definition of Python without examples, tradeoffs, or project context."
+          ],
+          "correct_answer": 1,
+          "topic": "Python"
+        },
+        {
+          "id": 2,
+          "question": "The job description emphasizes Javascript. Which option is the strongest interview response?",
+          "options": [
+            "Describe where Javascript fits in the system, why it was chosen, and what constraints it solved.",
+            "Say that Javascript is important but avoid discussing any implementation details or outcomes.",
+            "Give a memorized definition of Javascript without examples, tradeoffs, or project context.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Javascript."
+          ],
+          "correct_answer": 0,
+          "topic": "Javascript"
+        },
+        {
+          "id": 3,
+          "question": "For a Job Description: Full Stack Developer interview, which answer best demonstrates practical understanding of React?",
+          "options": [
+            "Say that React is important but avoid discussing any implementation details or outcomes.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of React.",
+            "Give a memorized definition of React without examples, tradeoffs, or project context.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for React."
+          ],
+          "correct_answer": 3,
+          "topic": "React"
+        },
+        {
+          "id": 4,
+          "question": "Based on this candidate profile and role, which action best shows readiness in Node.Js?",
+          "options": [
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Node.Js.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Node.Js.",
+            "Give a memorized definition of Node.Js without examples, tradeoffs, or project context.",
+            "Say that Node.Js is important but avoid discussing any implementation details or outcomes."
+          ],
+          "correct_answer": 0,
+          "topic": "Node.Js"
+        },
+        {
+          "id": 5,
+          "question": "The job description emphasizes Node. Which option is the strongest interview response?",
+          "options": [
+            "Give a memorized definition of Node without examples, tradeoffs, or project context.",
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Node.",
+            "Claim Node is mostly handled automatically so deep understanding is unnecessary.",
+            "Say that Node is important but avoid discussing any implementation details or outcomes."
+          ],
+          "correct_answer": 1,
+          "topic": "Node"
+        },
+        {
+          "id": 6,
+          "question": "Based on this candidate profile and role, which action best shows readiness in Flask?",
+          "options": [
+            "Say that Flask is important but avoid discussing any implementation details or outcomes.",
+            "Connect Flask to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+            "Give a memorized definition of Flask without examples, tradeoffs, or project context.",
+            "Claim Flask is mostly handled automatically so deep understanding is unnecessary."
+          ],
+          "correct_answer": 1,
+          "topic": "Flask"
+        },
+        {
+          "id": 7,
+          "question": "The job description emphasizes Django. Which option is the strongest interview response?",
+          "options": [
+            "Say that Django is important but avoid discussing any implementation details or outcomes.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Django.",
+            "Claim Django is mostly handled automatically so deep understanding is unnecessary.",
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Django."
+          ],
+          "correct_answer": 3,
+          "topic": "Django"
+        },
+        {
+          "id": 8,
+          "question": "For a Job Description: Full Stack Developer interview, which answer best demonstrates practical understanding of Mysql?",
+          "options": [
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Mysql.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Mysql.",
+            "Claim Mysql is mostly handled automatically so deep understanding is unnecessary.",
+            "Say that Mysql is important but avoid discussing any implementation details or outcomes."
+          ],
+          "correct_answer": 0,
+          "topic": "Mysql"
+        },
+        {
+          "id": 9,
+          "question": "Which statement would be the most credible answer for a Job Description: Full Stack Developer candidate discussing Postgresql?",
+          "options": [
+            "Connect Postgresql to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+            "Say that Postgresql is important but avoid discussing any implementation details or outcomes.",
+            "Claim Postgresql is mostly handled automatically so deep understanding is unnecessary.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Postgresql."
+          ],
+          "correct_answer": 0,
+          "topic": "Postgresql"
+        },
+        {
+          "id": 10,
+          "question": "For a Job Description: Full Stack Developer interview, which answer best demonstrates practical understanding of Mongodb?",
+          "options": [
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Mongodb.",
+            "Say that Mongodb is important but avoid discussing any implementation details or outcomes.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for Mongodb.",
+            "Give a memorized definition of Mongodb without examples, tradeoffs, or project context."
+          ],
+          "correct_answer": 2,
+          "topic": "Mongodb"
+        },
+        {
+          "id": 11,
+          "question": "Which statement would be the most credible answer for a Job Description: Full Stack Developer candidate discussing Git?",
+          "options": [
+            "Say that Git is important but avoid discussing any implementation details or outcomes.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for Git.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Git.",
+            "Give a memorized definition of Git without examples, tradeoffs, or project context."
+          ],
+          "correct_answer": 1,
+          "topic": "Git"
+        },
+        {
+          "id": 12,
+          "question": "Based on this candidate profile and role, which action best shows readiness in Html?",
+          "options": [
+            "Say that Html is important but avoid discussing any implementation details or outcomes.",
+            "Claim Html is mostly handled automatically so deep understanding is unnecessary.",
+            "Describe where Html fits in the system, why it was chosen, and what constraints it solved.",
+            "Give a memorized definition of Html without examples, tradeoffs, or project context."
+          ],
+          "correct_answer": 2,
+          "topic": "Html"
+        },
+        {
+          "id": 13,
+          "question": "The job description emphasizes Css. Which option is the strongest interview response?",
+          "options": [
+            "Say that Css is important but avoid discussing any implementation details or outcomes.",
+            "Claim Css is mostly handled automatically so deep understanding is unnecessary.",
+            "Connect Css to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Css."
+          ],
+          "correct_answer": 2,
+          "topic": "Css"
+        },
+        {
+          "id": 14,
+          "question": "The job description emphasizes Design, develop, and maintain web applications. Which option is the strongest interview response?",
+          "options": [
+            "Give a memorized definition of Design, develop, and maintain web applications without examples, tradeoffs, or project context.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Design, develop, and maintain web applications.",
+            "Claim Design, develop, and maintain web applications is mostly handled automatically so deep understanding is unnecessary.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for Design, develop, and maintain web applications."
+          ],
+          "correct_answer": 3,
+          "topic": "Design, develop, and maintain web applications"
+        },
+        {
+          "id": 15,
+          "question": "Based on this candidate profile and role, which action best shows readiness in Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks?",
+          "options": [
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks.",
+            "Say that Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks is important but avoid discussing any implementation details or outcomes.",
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks.",
+            "Give a memorized definition of Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks without examples, tradeoffs, or project context."
+          ],
+          "correct_answer": 2,
+          "topic": "Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "level_1": [
+      {
+        "duration": 2,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/ddfb18e1-48d2-4d11-b2b6-a5454bcb31c2",
+        "recordingUrl": "/recordings/level1_q0_20260311_193023_847610.webm"
+      }
+    ]
+  },
+  "scores": {
+    "level_1": 5.0
+  },
+  "feedback": {
+    "level_1": [
+      "Responses were extremely short and were scored very strictly."
+    ]
+  },
+  "suggestions": {
+    "level_1": [
+      "Spend longer on each answer and explain your reasoning before ending the recording.",
+      "Open with a tighter summary of your background, current strengths, and fit for the role."
+    ]
+  },
+  "completion_time": null,
+  "total_duration": 0,
+  "updated_at": "2026-03-11T19:30:26.068411"
+}

@@ -1,0 +1,262 @@
+{
+    "resume_analysis": {
+        "contact": {
+            "name": "John Doe",
+            "email": "john.doe@email.com",
+            "phone": "(555) 123-4567"
+        },
+        "skills": [
+            "Python",
+            "JavaScript",
+            "Java",
+            "SQL",
+            "HTML",
+            "CSS",
+            "React",
+            "Node.js",
+            "Django",
+            "Flask",
+            "Express",
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "MySQL",
+            "AWS",
+            "Docker",
+            "Kubernetes",
+            "Azure",
+            "Git",
+            "Jenkins",
+            "JIRA",
+            "Confluence",
+            "Team Leadership and Mentoring",
+            "Project Management and Agile Methodologies",
+            "Communication and Client Relations",
+            "Problem-Solving and Critical Thinking"
+        ],
+        "experiences": [
+            {
+                "position": "Senior Software Engineer",
+                "company": "TechCorp Inc.",
+                "description": "Lead development team of 5 engineers, Developed and deployed microservices architecture using Python and Node.js, Implemented CI/CD pipelines reducing deployment time by 40%, Managed cloud infrastructure on AWS, reducing costs by 25%, Mentored junior developers and conducted code reviews"
+            },
+            {
+                "position": "Software Developer",
+                "company": "StartupXYZ",
+                "description": "Built responsive web applications using React and Node.js, Developed RESTful APIs and database schemas, Collaborated with cross-functional teams to deliver projects on time, Implemented automated testing increasing code coverage to 85%"
+            }
+        ],
+        "education": [
+            {
+                "degree": "Bachelor of Science in Computer Science",
+                "institution": "University of Technology",
+                "field": ""
+            }
+        ],
+        "summary": "Experienced Software Engineer with 5 years of experience in full-stack development, specializing in Python, JavaScript, and cloud technologies. Proven track record of delivering high-quality applications and leading development teams."
+    },
+    "job_analysis": {
+        "title": "Senior Software Engineer",
+        "company": "TechCorp Inc.",
+        "requirements": [
+            "5+ years of professional software development experience",
+            "Strong proficiency in Python and JavaScript programming",
+            "Experience with modern web frameworks (React, Node.js, Django, Flask)",
+            "Solid understanding of cloud platforms (AWS, Azure, or GCP)",
+            "Experience with containerization and orchestration (Docker, Kubernetes)",
+            "Knowledge of database systems (PostgreSQL, MongoDB, Redis)",
+            "Familiarity with CI/CD pipelines and DevOps practices",
+            "Strong problem-solving skills and attention to detail",
+            "Excellent communication and teamwork abilities"
+        ],
+        "skills": [
+            "Python",
+            "JavaScript",
+            "SQL",
+            "React",
+            "HTML5",
+            "CSS3",
+            "TypeScript",
+            "Node.js",
+            "Express",
+            "Django",
+            "Flask",
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "AWS",
+            "Docker",
+            "Kubernetes",
+            "Git",
+            "Jenkins",
+            "JIRA",
+            "Confluence",
+            "Jest",
+            "Pytest",
+            "Cypress"
+        ],
+        "experience_level": "Senior",
+        "education_required": "Bachelor's degree in Computer Science or related field"
+    },
+    "score_one": {
+        "ats_best_practices": {
+            "name": "Ats Best Practices",
+            "score": 85.0,
+            "weight": 15.0,
+            "feedback": "Good formatting and structure",
+            "evidence": [
+                "Clear sections",
+                "Professional layout"
+            ],
+            "missing": [
+                "Keywords in summary"
+            ]
+        },
+        "keywords_skills": {
+            "name": "Keywords Skills",
+            "score": 60.0,
+            "weight": 25.0,
+            "feedback": "Some skill overlap but missing key skills",
+            "evidence": [
+                "Python",
+                "JavaScript matched"
+            ],
+            "missing": [
+                "Docker",
+                "AWS",
+                "TypeScript",
+                "Jest",
+                "Pytest",
+                "Cypress"
+            ]
+        },
+        "experience_abilities": {
+            "name": "Experience Abilities",
+            "score": 80.0,
+            "weight": 20.0,
+            "feedback": "Relevant experience aligns well",
+            "evidence": [
+                "5 years in similar role"
+            ],
+            "missing": [
+                "Leadership experience"
+            ]
+        },
+        "requirements_qualifications": {
+            "name": "Requirements Qualifications",
+            "score": 60.0,
+            "weight": 20.0,
+            "feedback": "Meets some requirements",
+            "evidence": [
+                "Bachelor's degree",
+                "Technical skills"
+            ],
+            "missing": [
+                "Specific certification",
+                "5+ years of professional software development experience"
+            ]
+        },
+        "measurable_results": {
+            "name": "Measurable Results",
+            "score": 40.0,
+            "weight": 10.0,
+            "feedback": "Limited measurable results",
+            "evidence": [
+                "Increased efficiency by 20%"
+            ],
+            "missing": [
+                "Quantified achievements in multiple areas"
+            ]
+        },
+        "action_verbs": {
+            "name": "Action Verbs",
+            "score": 85.0,
+            "weight": 5.0,
+            "feedback": "Good use of action verbs",
+            "evidence": [
+                "Developed",
+                "Implemented",
+                "Managed"
+            ],
+            "missing": []
+        },
+        "word_count": {
+            "name": "Word Count",
+            "score": 80.0,
+            "weight": 5.0,
+            "feedback": "Appropriate length for experience level",
+            "evidence": [
+                "Well-balanced content"
+            ],
+            "missing": []
+        },
+        "total_match_score": 0.68
+    },
+    "score_two": {
+        "overall_qualification": {
+            "name": "Overall Qualification",
+            "score": 80.0,
+            "weight": 30.0,
+            "feedback": "Strong candidate overall",
+            "evidence": [
+                "Relevant experience",
+                "Good skills"
+            ],
+            "missing": [
+                "Some advanced skills"
+            ]
+        },
+        "technical_skills": {
+            "name": "Technical Skills",
+            "score": 75.0,
+            "weight": 30.0,
+            "feedback": "Good technical foundation",
+            "evidence": [
+                "Core programming skills"
+            ],
+            "missing": [
+                "Cloud technologies"
+            ]
+        },
+        "soft_skills": {
+            "name": "Soft Skills",
+            "score": 85.0,
+            "weight": 20.0,
+            "feedback": "Strong communication and teamwork",
+            "evidence": [
+                "Team projects",
+                "Leadership roles"
+            ],
+            "missing": []
+        },
+        "experience_relevance": {
+            "name": "Experience Relevance",
+            "score": 70.0,
+            "weight": 15.0,
+            "feedback": "Relevant but not perfect match",
+            "evidence": [
+                "Industry experience"
+            ],
+            "missing": [
+                "Specific role experience"
+            ]
+        },
+        "education_alignment": {
+            "name": "Education Alignment",
+            "score": 90.0,
+            "weight": 5.0,
+            "feedback": "Education exceeds requirements",
+            "evidence": [
+                "Relevant degree",
+                "Good institution"
+            ],
+            "missing": []
+        },
+        "total_qualification_score": 0.785
+    },
+    "recommendations": [
+        "Consider learning/mentioning these key skills: Pytest, AWS, Docker, Cloud technologies, Cypress, TypeScript, Jest",
+        "Add more quantifiable achievements and metrics to demonstrate impact",
+        "Consider additional certifications or projects to strengthen qualifications"
+    ]
+}

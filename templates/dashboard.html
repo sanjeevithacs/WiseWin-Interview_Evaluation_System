@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - WiseWin{% endblock %}
+
+{% block content %}
+{% set metrics = namespace(total_score=0, total_levels=0, total_minutes=0) %}
+{% for item in live_history %}
+    {% set metrics.total_score = metrics.total_score + (item.total_score or 0) %}
+    {% set metrics.total_levels = metrics.total_levels + (item.levels_completed or 0) %}
+    {% set metrics.total_minutes = metrics.total_minutes + (item.duration_minutes or 0) %}
+{% endfor %}
+{% set avg_score = (metrics.total_score / (live_history|length)) if live_history else 0 %}
+
+<div class="space-y-8">
+    <section class="overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-900 to-violet-700 p-8 text-white shadow-panel lg:p-10">
+        <div class="grid gap-8 lg:grid-cols-[1.5fr_0.8fr] lg:items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-100">
+                    <i class="fas fa-wave-square"></i>
+                    Candidate Workspace
+                </div>
+                <h1 class="mt-6 text-3xl font-semibold leading-tight sm:text-4xl">Welcome back, {{ user.name }}.</h1>
+                <p class="mt-4 max-w-2xl text-sm text-indigo-100 sm:text-base">
+                    Manage resume analysis, launch live interview practice, and track how your interview performance is changing over time.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="{{ url_for('live_interview') }}" class="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-indigo-700 transition duration-200 hover:bg-indigo-50">
+                        Start Live Interview
+                    </a>
+                    <a href="{{ url_for('analyze') }}" class="rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-white/15">
+                        Analyze Resume
+                    </a>
+                </div>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                <div class="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
+                    <div class="text-xs uppercase tracking-[0.22em] text-indigo-100">Latest score</div>
+                    <div class="mt-3 text-3xl font-semibold">{{ "%.0f"|format(avg_score) }}%</div>
+                    <p class="mt-2 text-sm text-indigo-100">Average across saved interview sessions.</p>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
+                    <div class="text-xs uppercase tracking-[0.22em] text-indigo-100">Practice time</div>
+                    <div class="mt-3 text-3xl font-semibold">{{ metrics.total_minutes }}</div>
+                    <p class="mt-2 text-sm text-indigo-100">Minutes captured across recent mock interviews.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <article class="rounded-xl bg-white p-6 shadow-md transition duration-200 hover:shadow-lg">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
+                <i class="fas fa-file-arrow-up"></i>
+            </div>
+            <h2 class="mt-5 text-lg font-medium text-gray-800">Analyze Resume</h2>
+            <p class="mt-2 text-sm text-gray-600">Upload your resume and job description to get ATS-style fit insights and missing-skill guidance.</p>
+            <a href="{{ url_for('analyze') }}" class="mt-5 inline-flex rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-indigo-700">
+                Start Analysis
+            </a>
+        </article>
+
+        <article class="rounded-xl bg-white p-6 shadow-md transition duration-200 hover:shadow-lg">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-violet-100 text-violet-500">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h2 class="mt-5 text-lg font-medium text-gray-800">View Results</h2>
+            <p class="mt-2 text-sm text-gray-600">Review saved interview performance, feedback summaries, and score trends from earlier sessions.</p>
+            <a href="{{ url_for('view_results') }}" class="mt-5 inline-flex rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-700 transition duration-200 hover:bg-gray-200">
+                Open Results
+            </a>
+        </article>
+
+        <article class="rounded-xl bg-white p-6 shadow-md transition duration-200 hover:shadow-lg">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+                <i class="fas fa-user-gear"></i>
+            </div>
+            <h2 class="mt-5 text-lg font-medium text-gray-800">Profile Settings</h2>
+            <p class="mt-2 text-sm text-gray-600">Check account details, recent activity, and shortcuts to your saved interview and analysis history.</p>
+            <a href="{{ url_for('profile') }}" class="mt-5 inline-flex rounded-lg bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-700 transition duration-200 hover:bg-gray-200">
+                Manage Profile
+            </a>
+        </article>
+
+        <article class="relative overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600 to-violet-500 p-6 shadow-md transition duration-200 hover:shadow-lg">
+            <div class="absolute right-0 top-0 h-28 w-28 -translate-y-6 translate-x-6 rounded-full bg-white/10"></div>
+            <div class="relative">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h2 class="mt-5 text-lg font-medium text-white">Live Interview</h2>
+                <p class="mt-2 text-sm text-indigo-100">Run the full AI-led interview flow with recording, evaluation, and a final interview report.</p>
+                <a href="{{ url_for('live_interview') }}" class="mt-5 inline-flex rounded-lg bg-white px-4 py-2 text-sm font-semibold text-indigo-700 transition duration-200 hover:bg-indigo-50">
+                    Launch Interview
+                </a>
+            </div>
+        </article>
+    </section>
+
+    <section class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <article class="rounded-xl bg-white p-6 shadow-md">
+            <div class="flex items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-lg font-medium text-gray-800">Interview Activity</h2>
+                    <p class="mt-1 text-sm text-gray-600">Recent actions and milestones across your interview workspace.</p>
+                </div>
+                <div class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">{{ live_history|length }} recent items</div>
+            </div>
+
+            <div class="mt-6 space-y-4">
+                {% for item in live_history %}
+                <div class="flex items-start gap-4 rounded-2xl border border-slate-100 px-4 py-4">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
+                        <i class="fas {% if item.status == 'completed' %}fa-circle-check{% else %}fa-clock{% endif %}"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-slate-900">
+                            {% if item.status == 'completed' %}
+                            Live Interview Completed
+                            {% else %}
+                            Interview Session In Progress
+                            {% endif %}
+                            {% if item.job_role %}
+                            <span class="text-slate-500">for {{ item.job_role }}</span>
+                            {% endif %}
+                        </p>
+                        <p class="mt-1 text-sm text-slate-500">
+                            Interview score generated at {{ "%.0f"|format(item.total_score or 0) }}%
+                        </p>
+                    </div>
+                    <div class="text-right text-xs text-slate-400">
+                        {{ (item.completion_time or item.created_at or '')[:10] }}
+                    </div>
+                </div>
+                {% else %}
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 rounded-2xl border border-slate-100 px-4 py-4">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-indigo-600"><i class="fas fa-video"></i></div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-slate-900">Live Interview Completed</p>
+                            <p class="mt-1 text-sm text-slate-500">Your first mock interview result will appear here.</p>
+                        </div>
+                        <div class="text-xs text-slate-400">10 Mar 2026</div>
+                    </div>
+                    <div class="flex items-start gap-4 rounded-2xl border border-slate-100 px-4 py-4">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><i class="fas fa-file-lines"></i></div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-slate-900">Resume Analysis Completed</p>
+                            <p class="mt-1 text-sm text-slate-500">Upload documents to generate your first analysis report.</p>
+                        </div>
+                        <div class="text-xs text-slate-400">9 Mar 2026</div>
+                    </div>
+                    <div class="flex items-start gap-4 rounded-2xl border border-slate-100 px-4 py-4">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-violet-100 text-violet-500"><i class="fas fa-chart-pie"></i></div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-slate-900">Interview Score Generated</p>
+                            <p class="mt-1 text-sm text-slate-500">Saved scores and recommendations will build up in this activity feed.</p>
+                        </div>
+                        <div class="text-xs text-slate-400">9 Mar 2026</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </article>
+
+        <article class="rounded-xl bg-white p-6 shadow-md">
+            <div>
+                <h2 class="text-lg font-medium text-gray-800">Platform Stats</h2>
+                <p class="mt-1 text-sm text-gray-600">Key metrics from your recent interview activity.</p>
+            </div>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="rounded-xl bg-slate-50 p-6 text-center">
+                    <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="mt-4 text-sm text-slate-500">Interviews Completed</div>
+                    <div class="mt-2 text-2xl font-semibold text-slate-900">{{ live_history|length }}</div>
+                </div>
+                <div class="rounded-xl bg-slate-50 p-6 text-center">
+                    <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-violet-100 text-violet-500">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="mt-4 text-sm text-slate-500">Practice Levels</div>
+                    <div class="mt-2 text-2xl font-semibold text-slate-900">{{ metrics.total_levels }}</div>
+                </div>
+                <div class="rounded-xl bg-slate-50 p-6 text-center">
+                    <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-emerald-100 text-emerald-500">
+                        <i class="fas fa-gauge-high"></i>
+                    </div>
+                    <div class="mt-4 text-sm text-slate-500">Average Interview Score</div>
+                    <div class="mt-2 text-2xl font-semibold text-slate-900">{{ "%.0f"|format(avg_score) }}%</div>
+                </div>
+                <div class="rounded-xl bg-slate-50 p-6 text-center">
+                    <div class="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-rose-100 text-rose-500">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <div class="mt-4 text-sm text-slate-500">Practice Sessions</div>
+                    <div class="mt-2 text-2xl font-semibold text-slate-900">{{ live_history|length }}</div>
+                </div>
+            </div>
+        </article>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,734 @@
+{
+  "session_id": "88c5eac7-d8e9-4129-b1cc-f559b1d0f113",
+  "user_email": "sanjeevitha.cs2023ai-ds@sece.ac.in",
+  "created_at": "2026-03-11T12:58:24.229186",
+  "status": "completed",
+  "structured_data": {
+    "candidate_name": "Sanjeevitha Sivakumar",
+    "candidate_skills": [
+      "JavaScript",
+      "Python",
+      "Java",
+      "C++",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "React",
+      "Node.js",
+      "Express.js",
+      "Flask",
+      "REST APIs",
+      "MongoDB",
+      "MySQL",
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Postman",
+      "Node",
+      "Rest",
+      "Tailwind",
+      "C",
+      "Languages - JavaScript",
+      "Frontend - HTML",
+      "Backend - Node.js",
+      "Database - MongoDB",
+      "Tools - Git"
+    ],
+    "experience_years": 0,
+    "education_level": "Bachelor",
+    "job_role": "Full Stack Developer",
+    "required_skills": [
+      "JavaScript",
+      "Frontend frameworks",
+      "Backend frameworks",
+      "Database design",
+      "Version control (Git)",
+      "Problem-solving",
+      "Teamwork",
+      "Python",
+      "React",
+      "Node.Js",
+      "Node",
+      "Flask",
+      "Django",
+      "Mysql",
+      "Postgresql",
+      "Mongodb",
+      "Git",
+      "Html",
+      "Css",
+      "Strong knowledge of JavaScript and modern frontend frameworks",
+      "Experience with backend frameworks and API development",
+      "Understanding of database design and query optimization",
+      "Familiarity with version control (Git)",
+      "Problem-solving and teamwork skills",
+      "Design, develop, and maintain web applications",
+      "Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks",
+      "Develop backend services using Node.js, Python (Flask/Django), or similar technologies",
+      "Design and manage databases (MySQL, PostgreSQL, MongoDB)",
+      "Implement RESTful APIs and integrate third-party services",
+      "Ensure performance, scalability, and security of applications"
+    ],
+    "missing_skills": [
+      "Frontend frameworks",
+      "Backend frameworks",
+      "Database design",
+      "Version control (Git)",
+      "Problem-solving",
+      "Teamwork",
+      "Django",
+      "Postgresql",
+      "Strong knowledge of JavaScript and modern frontend frameworks",
+      "Experience with backend frameworks and API development",
+      "Understanding of database design and query optimization",
+      "Familiarity with version control (Git)",
+      "Problem-solving and teamwork skills",
+      "Design, develop, and maintain web applications",
+      "Build responsive UI using HTML, CSS, JavaScript, React or similar frameworks",
+      "Develop backend services using Node.js, Python (Flask/Django), or similar technologies",
+      "Design and manage databases (MySQL, PostgreSQL, MongoDB)",
+      "Implement RESTful APIs and integrate third-party services",
+      "Ensure performance, scalability, and security of applications"
+    ],
+    "industry": "Technology",
+    "difficulty": "easy",
+    "passing_threshold": 60,
+    "interview_config": {
+      "difficulty": "easy",
+      "experience_level": "Entry Level",
+      "estimated_duration": 30,
+      "levels_enabled": [
+        "level_1",
+        "level_2",
+        "level_3",
+        "level_4"
+      ],
+      "scoring_weights": {
+        "level_1": 0.25,
+        "level_2": 0.25,
+        "level_3": 0.25,
+        "level_4": 0.25
+      },
+      "passing_threshold": 60
+    },
+    "interview_session_id": "88c5eac7-d8e9-4129-b1cc-f559b1d0f113",
+    "questions": {
+      "level_1": {
+        "title": "Self Introduction",
+        "duration_seconds": 120,
+        "questions": [
+          "Please introduce yourself."
+        ]
+      },
+      "level_2": {
+        "title": "Technical Questions",
+        "duration_seconds": 90,
+        "questions": [
+          "What are the basic features of Java?",
+          "How do you create a class in Java?",
+          "What is the difference between interface and abstract class?"
+        ]
+      },
+      "level_3": {
+        "title": "Behavioral Questions",
+        "duration_seconds": 90,
+        "questions": [
+          "Share an example of when you received tough feedback on your work and how you changed your approach afterward.",
+          "Share a situation where you had to take ownership beyond your formal responsibilities to move a project forward.",
+          "Describe a time you had to learn Frontend frameworks or a similar concept quickly to meet a delivery commitment."
+        ]
+      },
+      "level_4": {
+        "title": "Technical MCQ Round",
+        "duration_seconds": 600,
+        "questions": [
+          {
+            "id": 1,
+            "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of JavaScript?",
+            "options": [
+              "Say that JavaScript is important but avoid discussing any implementation details or outcomes.",
+              "Claim JavaScript is mostly handled automatically so deep understanding is unnecessary.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of JavaScript.",
+              "Describe where JavaScript fits in the system, why it was chosen, and what constraints it solved."
+            ],
+            "correct_answer": 3,
+            "topic": "JavaScript"
+          },
+          {
+            "id": 2,
+            "question": "Which statement would be the most credible answer for a Full Stack Developer candidate discussing Frontend frameworks?",
+            "options": [
+              "Say that Frontend frameworks is important but avoid discussing any implementation details or outcomes.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for Frontend frameworks.",
+              "Give a memorized definition of Frontend frameworks without examples, tradeoffs, or project context.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Frontend frameworks."
+            ],
+            "correct_answer": 1,
+            "topic": "Frontend frameworks"
+          },
+          {
+            "id": 3,
+            "question": "Which statement would be the most credible answer for a Full Stack Developer candidate discussing Backend frameworks?",
+            "options": [
+              "Connect Backend frameworks to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+              "Claim Backend frameworks is mostly handled automatically so deep understanding is unnecessary.",
+              "Give a memorized definition of Backend frameworks without examples, tradeoffs, or project context.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Backend frameworks."
+            ],
+            "correct_answer": 0,
+            "topic": "Backend frameworks"
+          },
+          {
+            "id": 4,
+            "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of Database design?",
+            "options": [
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Database design.",
+              "Say that Database design is important but avoid discussing any implementation details or outcomes.",
+              "Claim Database design is mostly handled automatically so deep understanding is unnecessary.",
+              "Give a memorized definition of Database design without examples, tradeoffs, or project context."
+            ],
+            "correct_answer": 0,
+            "topic": "Database design"
+          },
+          {
+            "id": 5,
+            "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of Version control (Git)?",
+            "options": [
+              "Say that Version control (Git) is important but avoid discussing any implementation details or outcomes.",
+              "Claim Version control (Git) is mostly handled automatically so deep understanding is unnecessary.",
+              "Connect Version control (Git) to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Version control (Git)."
+            ],
+            "correct_answer": 2,
+            "topic": "Version control (Git)"
+          },
+          {
+            "id": 6,
+            "question": "The job description emphasizes Problem-solving. Which option is the strongest interview response?",
+            "options": [
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Problem-solving.",
+              "Give a memorized definition of Problem-solving without examples, tradeoffs, or project context.",
+              "Say that Problem-solving is important but avoid discussing any implementation details or outcomes.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for Problem-solving."
+            ],
+            "correct_answer": 3,
+            "topic": "Problem-solving"
+          },
+          {
+            "id": 7,
+            "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of Teamwork?",
+            "options": [
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Teamwork.",
+              "Say that Teamwork is important but avoid discussing any implementation details or outcomes.",
+              "Give a memorized definition of Teamwork without examples, tradeoffs, or project context.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Teamwork."
+            ],
+            "correct_answer": 0,
+            "topic": "Teamwork"
+          },
+          {
+            "id": 8,
+            "question": "Based on this candidate profile and role, which action best shows readiness in Python?",
+            "options": [
+              "Say that Python is important but avoid discussing any implementation details or outcomes.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Python.",
+              "Give a memorized definition of Python without examples, tradeoffs, or project context.",
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Python."
+            ],
+            "correct_answer": 3,
+            "topic": "Python"
+          },
+          {
+            "id": 9,
+            "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of React?",
+            "options": [
+              "Describe where React fits in the system, why it was chosen, and what constraints it solved.",
+              "Say that React is important but avoid discussing any implementation details or outcomes.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of React.",
+              "Give a memorized definition of React without examples, tradeoffs, or project context."
+            ],
+            "correct_answer": 0,
+            "topic": "React"
+          },
+          {
+            "id": 10,
+            "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of Node.Js?",
+            "options": [
+              "Claim Node.Js is mostly handled automatically so deep understanding is unnecessary.",
+              "Give a memorized definition of Node.Js without examples, tradeoffs, or project context.",
+              "Connect Node.Js to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Node.Js."
+            ],
+            "correct_answer": 2,
+            "topic": "Node.Js"
+          },
+          {
+            "id": 11,
+            "question": "The job description emphasizes Node. Which option is the strongest interview response?",
+            "options": [
+              "Give a memorized definition of Node without examples, tradeoffs, or project context.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Node.",
+              "Claim Node is mostly handled automatically so deep understanding is unnecessary.",
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Node."
+            ],
+            "correct_answer": 3,
+            "topic": "Node"
+          },
+          {
+            "id": 12,
+            "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of Flask?",
+            "options": [
+              "Say that Flask is important but avoid discussing any implementation details or outcomes.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for Flask.",
+              "Claim Flask is mostly handled automatically so deep understanding is unnecessary.",
+              "Give a memorized definition of Flask without examples, tradeoffs, or project context."
+            ],
+            "correct_answer": 1,
+            "topic": "Flask"
+          },
+          {
+            "id": 13,
+            "question": "The job description emphasizes Django. Which option is the strongest interview response?",
+            "options": [
+              "Say that Django is important but avoid discussing any implementation details or outcomes.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Django.",
+              "Claim Django is mostly handled automatically so deep understanding is unnecessary.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for Django."
+            ],
+            "correct_answer": 3,
+            "topic": "Django"
+          },
+          {
+            "id": 14,
+            "question": "The job description emphasizes Mysql. Which option is the strongest interview response?",
+            "options": [
+              "Say that Mysql is important but avoid discussing any implementation details or outcomes.",
+              "Connect Mysql to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+              "Claim Mysql is mostly handled automatically so deep understanding is unnecessary.",
+              "Give a memorized definition of Mysql without examples, tradeoffs, or project context."
+            ],
+            "correct_answer": 1,
+            "topic": "Mysql"
+          },
+          {
+            "id": 15,
+            "question": "Which statement would be the most credible answer for a Full Stack Developer candidate discussing Postgresql?",
+            "options": [
+              "Claim Postgresql is mostly handled automatically so deep understanding is unnecessary.",
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Postgresql.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Postgresql.",
+              "Say that Postgresql is important but avoid discussing any implementation details or outcomes."
+            ],
+            "correct_answer": 1,
+            "topic": "Postgresql"
+          }
+        ]
+      }
+    }
+  },
+  "current_level": 5,
+  "level_results": {
+    "level_1": {
+      "score": 5.0,
+      "feedback": [
+        "Responses were extremely short and were scored very strictly."
+      ],
+      "evidence": {
+        "responses_recorded": 1,
+        "average_duration_seconds": 3.0,
+        "completion_ratio": 1.0
+      },
+      "level_breakdown": {
+        "communication": 5.0,
+        "confidence": 1.0,
+        "body_language": 0
+      },
+      "improvement_suggestions": [
+        "Spend longer on each answer and explain your reasoning before ending the recording.",
+        "Open with a tighter summary of your background, current strengths, and fit for the role."
+      ],
+      "total_score": 5.0
+    },
+    "level_2": {
+      "score": 5.0,
+      "feedback": [
+        "Responses were extremely short and were scored very strictly."
+      ],
+      "evidence": {
+        "responses_recorded": 3,
+        "average_duration_seconds": 2.0,
+        "completion_ratio": 1.0
+      },
+      "level_breakdown": {
+        "technical_knowledge": 5.0,
+        "communication": 0,
+        "confidence": 0
+      },
+      "improvement_suggestions": [
+        "Spend longer on each answer and explain your reasoning before ending the recording.",
+        "Use concrete project examples, tradeoffs, and implementation details in technical answers."
+      ],
+      "total_score": 5.0
+    },
+    "level_3": {
+      "score": 10.0,
+      "feedback": [
+        "Responses were extremely short and were scored very strictly."
+      ],
+      "evidence": {
+        "responses_recorded": 3,
+        "average_duration_seconds": 3.7,
+        "completion_ratio": 1.0
+      },
+      "level_breakdown": {
+        "behavioral_intelligence": 10.0,
+        "sentiment": 0,
+        "communication": 5.0
+      },
+      "improvement_suggestions": [
+        "Spend longer on each answer and explain your reasoning before ending the recording.",
+        "Use STAR more explicitly by covering the situation, your actions, and the result."
+      ],
+      "total_score": 10.0
+    },
+    "level_4": {
+      "score": 26.7,
+      "feedback": [
+        "You answered 4 out of 15 MCQs correctly."
+      ],
+      "evidence": {
+        "correct_answers": 4,
+        "total_questions": 15
+      },
+      "level_breakdown": {
+        "mcq_accuracy": 26.7
+      },
+      "improvement_suggestions": [
+        "Review the concepts you missed in JavaScript, Backend frameworks, Version control (Git), Problem-solving.",
+        "Practice answering technical questions with stronger concept-to-project mapping."
+      ],
+      "total_score": 26.7
+    }
+  },
+  "questions": {
+    "level_1": {
+      "title": "Self Introduction",
+      "duration_seconds": 120,
+      "questions": [
+        "Please introduce yourself."
+      ]
+    },
+    "level_2": {
+      "title": "Technical Questions",
+      "duration_seconds": 90,
+      "questions": [
+        "What are the basic features of Java?",
+        "How do you create a class in Java?",
+        "What is the difference between interface and abstract class?"
+      ]
+    },
+    "level_3": {
+      "title": "Behavioral Questions",
+      "duration_seconds": 90,
+      "questions": [
+        "Share an example of when you received tough feedback on your work and how you changed your approach afterward.",
+        "Share a situation where you had to take ownership beyond your formal responsibilities to move a project forward.",
+        "Describe a time you had to learn Frontend frameworks or a similar concept quickly to meet a delivery commitment."
+      ]
+    },
+    "level_4": {
+      "title": "Technical MCQ Round",
+      "duration_seconds": 600,
+      "questions": [
+        {
+          "id": 1,
+          "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of JavaScript?",
+          "options": [
+            "Say that JavaScript is important but avoid discussing any implementation details or outcomes.",
+            "Claim JavaScript is mostly handled automatically so deep understanding is unnecessary.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of JavaScript.",
+            "Describe where JavaScript fits in the system, why it was chosen, and what constraints it solved."
+          ],
+          "correct_answer": 3,
+          "topic": "JavaScript"
+        },
+        {
+          "id": 2,
+          "question": "Which statement would be the most credible answer for a Full Stack Developer candidate discussing Frontend frameworks?",
+          "options": [
+            "Say that Frontend frameworks is important but avoid discussing any implementation details or outcomes.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for Frontend frameworks.",
+            "Give a memorized definition of Frontend frameworks without examples, tradeoffs, or project context.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Frontend frameworks."
+          ],
+          "correct_answer": 1,
+          "topic": "Frontend frameworks"
+        },
+        {
+          "id": 3,
+          "question": "Which statement would be the most credible answer for a Full Stack Developer candidate discussing Backend frameworks?",
+          "options": [
+            "Connect Backend frameworks to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+            "Claim Backend frameworks is mostly handled automatically so deep understanding is unnecessary.",
+            "Give a memorized definition of Backend frameworks without examples, tradeoffs, or project context.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Backend frameworks."
+          ],
+          "correct_answer": 0,
+          "topic": "Backend frameworks"
+        },
+        {
+          "id": 4,
+          "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of Database design?",
+          "options": [
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Database design.",
+            "Say that Database design is important but avoid discussing any implementation details or outcomes.",
+            "Claim Database design is mostly handled automatically so deep understanding is unnecessary.",
+            "Give a memorized definition of Database design without examples, tradeoffs, or project context."
+          ],
+          "correct_answer": 0,
+          "topic": "Database design"
+        },
+        {
+          "id": 5,
+          "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of Version control (Git)?",
+          "options": [
+            "Say that Version control (Git) is important but avoid discussing any implementation details or outcomes.",
+            "Claim Version control (Git) is mostly handled automatically so deep understanding is unnecessary.",
+            "Connect Version control (Git) to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Version control (Git)."
+          ],
+          "correct_answer": 2,
+          "topic": "Version control (Git)"
+        },
+        {
+          "id": 6,
+          "question": "The job description emphasizes Problem-solving. Which option is the strongest interview response?",
+          "options": [
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Problem-solving.",
+            "Give a memorized definition of Problem-solving without examples, tradeoffs, or project context.",
+            "Say that Problem-solving is important but avoid discussing any implementation details or outcomes.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for Problem-solving."
+          ],
+          "correct_answer": 3,
+          "topic": "Problem-solving"
+        },
+        {
+          "id": 7,
+          "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of Teamwork?",
+          "options": [
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Teamwork.",
+            "Say that Teamwork is important but avoid discussing any implementation details or outcomes.",
+            "Give a memorized definition of Teamwork without examples, tradeoffs, or project context.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Teamwork."
+          ],
+          "correct_answer": 0,
+          "topic": "Teamwork"
+        },
+        {
+          "id": 8,
+          "question": "Based on this candidate profile and role, which action best shows readiness in Python?",
+          "options": [
+            "Say that Python is important but avoid discussing any implementation details or outcomes.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Python.",
+            "Give a memorized definition of Python without examples, tradeoffs, or project context.",
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Python."
+          ],
+          "correct_answer": 3,
+          "topic": "Python"
+        },
+        {
+          "id": 9,
+          "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of React?",
+          "options": [
+            "Describe where React fits in the system, why it was chosen, and what constraints it solved.",
+            "Say that React is important but avoid discussing any implementation details or outcomes.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of React.",
+            "Give a memorized definition of React without examples, tradeoffs, or project context."
+          ],
+          "correct_answer": 0,
+          "topic": "React"
+        },
+        {
+          "id": 10,
+          "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of Node.Js?",
+          "options": [
+            "Claim Node.Js is mostly handled automatically so deep understanding is unnecessary.",
+            "Give a memorized definition of Node.Js without examples, tradeoffs, or project context.",
+            "Connect Node.Js to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Node.Js."
+          ],
+          "correct_answer": 2,
+          "topic": "Node.Js"
+        },
+        {
+          "id": 11,
+          "question": "The job description emphasizes Node. Which option is the strongest interview response?",
+          "options": [
+            "Give a memorized definition of Node without examples, tradeoffs, or project context.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Node.",
+            "Claim Node is mostly handled automatically so deep understanding is unnecessary.",
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Node."
+          ],
+          "correct_answer": 3,
+          "topic": "Node"
+        },
+        {
+          "id": 12,
+          "question": "For a Full Stack Developer interview, which answer best demonstrates practical understanding of Flask?",
+          "options": [
+            "Say that Flask is important but avoid discussing any implementation details or outcomes.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for Flask.",
+            "Claim Flask is mostly handled automatically so deep understanding is unnecessary.",
+            "Give a memorized definition of Flask without examples, tradeoffs, or project context."
+          ],
+          "correct_answer": 1,
+          "topic": "Flask"
+        },
+        {
+          "id": 13,
+          "question": "The job description emphasizes Django. Which option is the strongest interview response?",
+          "options": [
+            "Say that Django is important but avoid discussing any implementation details or outcomes.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Django.",
+            "Claim Django is mostly handled automatically so deep understanding is unnecessary.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for Django."
+          ],
+          "correct_answer": 3,
+          "topic": "Django"
+        },
+        {
+          "id": 14,
+          "question": "The job description emphasizes Mysql. Which option is the strongest interview response?",
+          "options": [
+            "Say that Mysql is important but avoid discussing any implementation details or outcomes.",
+            "Connect Mysql to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+            "Claim Mysql is mostly handled automatically so deep understanding is unnecessary.",
+            "Give a memorized definition of Mysql without examples, tradeoffs, or project context."
+          ],
+          "correct_answer": 1,
+          "topic": "Mysql"
+        },
+        {
+          "id": 15,
+          "question": "Which statement would be the most credible answer for a Full Stack Developer candidate discussing Postgresql?",
+          "options": [
+            "Claim Postgresql is mostly handled automatically so deep understanding is unnecessary.",
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Postgresql.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Postgresql.",
+            "Say that Postgresql is important but avoid discussing any implementation details or outcomes."
+          ],
+          "correct_answer": 1,
+          "topic": "Postgresql"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "level_1": [
+      {
+        "duration": 3,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/1ea34bda-7249-4f48-a47e-ef54c4ddeade",
+        "recordingUrl": "/recordings/level1_q0_20260311_125836_367803.webm"
+      }
+    ],
+    "level_2": [
+      {
+        "duration": 2,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/188c28d5-2554-4225-ac4c-a915645d818a",
+        "recordingUrl": "/recordings/level2_q0_20260311_125848_645442.webm"
+      },
+      {
+        "duration": 2,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/a3b7afef-798d-4d5d-a582-c79db612edd1",
+        "recordingUrl": "/recordings/level2_q1_20260311_125854_183661.webm"
+      },
+      {
+        "duration": 2,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/72a3e7b3-1a72-4a76-a8ea-9bf0553bd6d5",
+        "recordingUrl": "/recordings/level2_q2_20260311_125903_565366.webm"
+      }
+    ],
+    "level_3": [
+      {
+        "duration": 5,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/fed5394d-ba47-4528-ad47-cb6b39f8aa33",
+        "recordingUrl": "/recordings/level3_q0_20260311_125912_367914.webm"
+      },
+      {
+        "duration": 3,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/fca90928-130d-47d4-b60c-5bff8ffeb40a",
+        "recordingUrl": "/recordings/level3_q1_20260311_125920_595418.webm"
+      },
+      {
+        "duration": 3,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/9df81002-15c2-46c2-8ce9-b476eacade06",
+        "recordingUrl": "/recordings/level3_q2_20260311_125928_079950.webm"
+      }
+    ],
+    "level_4": {
+      "1": 0,
+      "2": 1,
+      "3": 2,
+      "4": 0,
+      "5": 1,
+      "6": 2,
+      "7": 2,
+      "8": 3,
+      "9": 3,
+      "10": 2,
+      "11": 2,
+      "12": 2,
+      "13": 2,
+      "14": 3,
+      "15": 3
+    }
+  },
+  "scores": {
+    "level_1": 5.0,
+    "level_2": 5.0,
+    "level_3": 10.0,
+    "level_4": 26.7
+  },
+  "feedback": {
+    "level_1": [
+      "Responses were extremely short and were scored very strictly."
+    ],
+    "level_2": [
+      "Responses were extremely short and were scored very strictly."
+    ],
+    "level_3": [
+      "Responses were extremely short and were scored very strictly."
+    ],
+    "level_4": [
+      "You answered 4 out of 15 MCQs correctly."
+    ]
+  },
+  "suggestions": {
+    "level_1": [
+      "Spend longer on each answer and explain your reasoning before ending the recording.",
+      "Open with a tighter summary of your background, current strengths, and fit for the role."
+    ],
+    "level_2": [
+      "Spend longer on each answer and explain your reasoning before ending the recording.",
+      "Use concrete project examples, tradeoffs, and implementation details in technical answers."
+    ],
+    "level_3": [
+      "Spend longer on each answer and explain your reasoning before ending the recording.",
+      "Use STAR more explicitly by covering the situation, your actions, and the result."
+    ],
+    "level_4": [
+      "Review the concepts you missed in JavaScript, Backend frameworks, Version control (Git), Problem-solving.",
+      "Practice answering technical questions with stronger concept-to-project mapping."
+    ]
+  },
+  "completion_time": "2026-03-11T12:59:54.398337",
+  "total_duration": 90,
+  "updated_at": "2026-03-11T12:59:54.432602"
+}

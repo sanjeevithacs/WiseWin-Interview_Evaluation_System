@@ -1,0 +1,203 @@
+{
+  "level_1": {
+    "easy": [
+      "Tell me about yourself and your background.",
+      "What motivated you to apply for this role?",
+      "Walk me through your professional journey so far."
+    ],
+    "medium": [
+      "Tell me about yourself and how your experience led you to this role.",
+      "What specific aspects of your background make you a good fit for this position?",
+      "Describe your career progression and what you've learned at each step."
+    ],
+    "hard": [
+      "Tell me about yourself and how your unique combination of experiences prepares you for the challenges of this role.",
+      "What specific achievements in your background demonstrate your readiness for this position?",
+      "Describe your career journey and how each experience has shaped your professional philosophy."
+    ]
+  },
+  "level_2": {
+    "Python": {
+      "easy": [
+        "What are the basic data types in Python?",
+        "How do you create a function in Python?",
+        "What is the difference between a list and a tuple?",
+        "How do you handle exceptions in Python?"
+      ],
+      "medium": [
+        "Explain the difference between deep copy and shallow copy in Python.",
+        "How would you implement a decorator in Python?",
+        "What are Python's GIL and how does it affect multi-threading?",
+        "Describe the difference between @staticmethod and @classmethod in Python."
+      ],
+      "hard": [
+        "How would you optimize memory usage in a Python application processing large datasets?",
+        "Explain how Python's garbage collection works and how to optimize it.",
+        "Design a thread-safe singleton pattern in Python and explain the challenges.",
+        "How would you implement async/await in Python and what are the performance implications?"
+      ]
+    },
+    "JavaScript": {
+      "easy": [
+        "What are the basic data types in JavaScript?",
+        "How do you declare variables in JavaScript?",
+        "What is the difference between == and ===?",
+        "How do you create a function in JavaScript?"
+      ],
+      "medium": [
+        "Explain closures in JavaScript with an example.",
+        "What is the event loop and how does it work?",
+        "How do you handle asynchronous operations in JavaScript?",
+        "What is prototypal inheritance in JavaScript?"
+      ],
+      "hard": [
+        "How would you optimize JavaScript performance for a large-scale application?",
+        "Explain the difference between Promise.all and Promise.allSettled with use cases.",
+        "Design a custom memory management system for JavaScript applications.",
+        "How would you implement a reactive programming framework in JavaScript?"
+      ]
+    },
+    "Java": {
+      "easy": [
+        "What are the basic features of Java?",
+        "How do you create a class in Java?",
+        "What is the difference between interface and abstract class?",
+        "How does garbage collection work in Java?"
+      ],
+      "medium": [
+        "Explain the Java Memory Model and its implications.",
+        "How would you implement a thread-safe singleton in Java?",
+        "What are Java generics and how do they work?",
+        "Describe the difference between HashMap and ConcurrentHashMap."
+      ],
+      "hard": [
+        "How would you optimize JVM performance for a high-throughput application?",
+        "Design a custom class loader in Java and explain security implications.",
+        "Implement a lock-free data structure in Java and explain its advantages.",
+        "How would you debug and resolve memory leaks in a Java application?"
+      ]
+    },
+    "General": {
+      "easy": [
+        "What is your experience with version control systems?",
+        "How do you approach debugging a problem?",
+        "What testing methodologies are you familiar with?",
+        "How do you ensure code quality?"
+      ],
+      "medium": [
+        "How would you design a scalable API architecture?",
+        "What strategies do you use for performance optimization?",
+        "How do you approach system design problems?",
+        "What's your experience with cloud technologies?"
+      ],
+      "hard": [
+        "How would you design a system to handle millions of requests per second?",
+        "What strategies would you use to ensure high availability and fault tolerance?",
+        "How would you optimize database performance for complex queries?",
+        "Design a microservices architecture for a large-scale application."
+      ]
+    }
+  },
+  "level_3": {
+    "easy": [
+      "Tell me about a time when you had to work with a difficult team member.",
+      "Describe a situation where you had to learn something new quickly.",
+      "Give an example of a time you received constructive feedback.",
+      "Tell me about a time you had to meet a tight deadline."
+    ],
+    "medium": [
+      "Describe a situation where you had to convince your team to adopt your approach.",
+      "Tell me about a time when you had to handle a major project failure.",
+      "Give an example of how you've mentored a junior team member.",
+      "Describe a situation where you had to balance multiple competing priorities."
+    ],
+    "hard": [
+      "Tell me about a time when you had to make a critical decision with incomplete information.",
+      "Describe a situation where you had to lead a team through a major organizational change.",
+      "Give an example of how you've handled ethical dilemmas in the workplace.",
+      "Tell me about a time when you had to innovate beyond your job description."
+    ]
+  },
+  "level_4": {
+    "Python": {
+      "easy": [
+        "Write a function to check if a string is a palindrome.",
+        "Implement a function to find the maximum element in a list.",
+        "Create a function that counts the frequency of each character in a string.",
+        "Write a function to reverse a linked list."
+      ],
+      "medium": [
+        "Implement a function that detects if a binary tree is balanced.",
+        "Create a function that finds the shortest path in a maze using BFS.",
+        "Write a function that implements a LRU cache with O(1) operations.",
+        "Design a function that merges k sorted lists efficiently."
+      ],
+      "hard": [
+        "Implement a function that solves the traveling salesman problem using dynamic programming.",
+        "Create a function that designs an efficient autocomplete system using a trie.",
+        "Write a function that implements a consistent hashing algorithm.",
+        "Design a function that optimizes resource allocation using genetic algorithms."
+      ]
+    },
+    "JavaScript": {
+      "easy": [
+        "Write a function to reverse a string in JavaScript.",
+        "Implement a function that checks if a number is prime.",
+        "Create a function that removes duplicates from an array.",
+        "Write a function to find the largest element in an array."
+      ],
+      "medium": [
+        "Implement a debounce function in JavaScript.",
+        "Create a function that flattens a nested array.",
+        "Write a function that implements a promise-based retry mechanism.",
+        "Design a function that creates a simple event emitter."
+      ],
+      "hard": [
+        "Implement a function that creates a reactive data binding system.",
+        "Create a function that implements a virtual DOM diff algorithm.",
+        "Write a function that designs a concurrent task scheduler.",
+        "Design a function that implements a distributed lock mechanism."
+      ]
+    },
+    "Java": {
+      "easy": [
+        "Write a Java method to check if a number is prime.",
+        "Implement a function to reverse a string in Java.",
+        "Create a method that finds the factorial of a number.",
+        "Write a function to check if two strings are anagrams."
+      ],
+      "medium": [
+        "Implement a thread-safe producer-consumer pattern in Java.",
+        "Create a function that implements a connection pool.",
+        "Write a method that implements a binary search tree.",
+        "Design a function that implements a caching mechanism."
+      ],
+      "hard": [
+        "Implement a function that creates a custom thread pool with priority scheduling.",
+        "Create a function that implements a distributed transaction coordinator.",
+        "Write a method that designs a high-performance message queue.",
+        "Design a function that implements a consistent hashing ring."
+      ]
+    },
+    "General": {
+      "easy": [
+        "Write pseudocode to find the largest element in an array.",
+        "Design an algorithm to check if a string is a palindrome.",
+        "Create a function that sorts an array using bubble sort.",
+        "Write pseudocode to implement binary search."
+      ],
+      "medium": [
+        "Design an algorithm to find the shortest path in a graph.",
+        "Create a function that implements a hash table.",
+        "Write pseudocode to implement quicksort efficiently.",
+        "Design an algorithm to detect cycles in a linked list."
+      ],
+      "hard": [
+        "Design an algorithm to solve the knapsack problem optimally.",
+        "Create a function that implements a B-tree data structure.",
+        "Write pseudocode to implement Dijkstra's algorithm with priority queue.",
+        "Design an algorithm to optimize database query execution plans."
+      ]
+    }
+  }
+}

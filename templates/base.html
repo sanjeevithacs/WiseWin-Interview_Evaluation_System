@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}WiseWin{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    },
+                    boxShadow: {
+                        panel: '0 10px 30px rgba(15, 23, 42, 0.08)'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-gray-800">
+    {% set current_endpoint = request.endpoint or '' %}
+    {% set is_admin = session.get('user_role') == 'admin' %}
+    {% set user_email = session.get('user_email', '') %}
+    {% set user_initial = (user_email[:1] or 'W')|upper %}
+
+    <div class="min-h-screen">
+        <nav class="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-8">
+                    <a href="{{ url_for('admin_dashboard' if is_admin else 'dashboard') }}" class="flex items-center gap-3">
+                        <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-600 text-white shadow-panel">
+                            <i class="fas fa-brain text-lg"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold uppercase tracking-[0.22em] text-indigo-600">WiseWin</div>
+                            <div class="text-sm text-slate-500">AI Interview Evaluation</div>
+                        </div>
+                    </a>
+
+                    {% if session.get('user_email') %}
+                    <div class="hidden items-center gap-2 lg:flex">
+                        {% if is_admin %}
+                        <a href="{{ url_for('admin_dashboard') }}"
+                           class="rounded-lg px-4 py-2 text-sm font-medium transition {% if current_endpoint == 'admin_dashboard' %}bg-indigo-50 text-indigo-700{% else %}text-slate-600 hover:bg-slate-100 hover:text-slate-900{% endif %}">
+                            Dashboard
+                        </a>
+                        {% else %}
+                        <a href="{{ url_for('dashboard') }}"
+                           class="rounded-lg px-4 py-2 text-sm font-medium transition {% if current_endpoint == 'dashboard' %}bg-indigo-50 text-indigo-700{% else %}text-slate-600 hover:bg-slate-100 hover:text-slate-900{% endif %}">
+                            Dashboard
+                        </a>
+                        <a href="{{ url_for('analyze') }}"
+                           class="rounded-lg px-4 py-2 text-sm font-medium transition {% if current_endpoint == 'analyze' %}bg-indigo-50 text-indigo-700{% else %}text-slate-600 hover:bg-slate-100 hover:text-slate-900{% endif %}">
+                            Analyze
+                        </a>
+                        <a href="{{ url_for('live_interview') }}"
+                           class="rounded-lg px-4 py-2 text-sm font-medium transition {% if current_endpoint == 'live_interview' %}bg-indigo-50 text-indigo-700{% else %}text-slate-600 hover:bg-slate-100 hover:text-slate-900{% endif %}">
+                            Live Interview
+                        </a>
+                        <a href="{{ url_for('view_results') }}"
+                           class="rounded-lg px-4 py-2 text-sm font-medium transition {% if current_endpoint == 'view_results' %}bg-indigo-50 text-indigo-700{% else %}text-slate-600 hover:bg-slate-100 hover:text-slate-900{% endif %}">
+                            Results
+                        </a>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="flex items-center gap-3">
+                    {% if session.get('user_email') %}
+                    <button id="mobile-menu-toggle" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 text-slate-600 lg:hidden">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <details class="relative hidden lg:block">
+                        <summary class="flex cursor-pointer list-none items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-left shadow-sm transition hover:border-slate-300">
+                            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-sm font-semibold text-indigo-700">{{ user_initial }}</div>
+                            <div>
+                                <div class="text-sm font-semibold text-slate-900">{{ user_email }}</div>
+                                <div class="text-xs text-slate-500">{{ 'Administrator' if is_admin else 'Workspace member' }}</div>
+                            </div>
+                            <i class="fas fa-chevron-down text-xs text-slate-400"></i>
+                        </summary>
+                        <div class="absolute right-0 mt-3 w-56 rounded-2xl border border-slate-200 bg-white p-2 shadow-panel">
+                            {% if not is_admin %}
+                            <a href="{{ url_for('profile') }}" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">
+                                <i class="fas fa-user text-slate-400"></i>
+                                Profile
+                            </a>
+                            <a href="{{ url_for('contact_admin') }}" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">
+                                <i class="fas fa-life-ring text-slate-400"></i>
+                                Support
+                            </a>
+                            {% endif %}
+                            <a href="{{ url_for('logout') }}" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-rose-600 transition hover:bg-rose-50">
+                                <i class="fas fa-arrow-right-from-bracket"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </details>
+                    {% else %}
+                    <div class="hidden items-center gap-3 sm:flex">
+                        <a href="{{ url_for('login') }}" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900">Login</a>
+                        <a href="{{ url_for('register') }}" class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-700">Create account</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if session.get('user_email') %}
+            <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white lg:hidden">
+                <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
+                    {% if is_admin %}
+                    <a href="{{ url_for('admin_dashboard') }}" class="rounded-xl px-4 py-3 text-sm font-medium {% if current_endpoint == 'admin_dashboard' %}bg-indigo-50 text-indigo-700{% else %}text-slate-600 hover:bg-slate-50{% endif %}">Dashboard</a>
+                    {% else %}
+                    <a href="{{ url_for('dashboard') }}" class="rounded-xl px-4 py-3 text-sm font-medium {% if current_endpoint == 'dashboard' %}bg-indigo-50 text-indigo-700{% else %}text-slate-600 hover:bg-slate-50{% endif %}">Dashboard</a>
+                    <a href="{{ url_for('analyze') }}" class="rounded-xl px-4 py-3 text-sm font-medium {% if current_endpoint == 'analyze' %}bg-indigo-50 text-indigo-700{% else %}text-slate-600 hover:bg-slate-50{% endif %}">Analyze</a>
+                    <a href="{{ url_for('live_interview') }}" class="rounded-xl px-4 py-3 text-sm font-medium {% if current_endpoint == 'live_interview' %}bg-indigo-50 text-indigo-700{% else %}text-slate-600 hover:bg-slate-50{% endif %}">Live Interview</a>
+                    <a href="{{ url_for('view_results') }}" class="rounded-xl px-4 py-3 text-sm font-medium {% if current_endpoint == 'view_results' %}bg-indigo-50 text-indigo-700{% else %}text-slate-600 hover:bg-slate-50{% endif %}">Results</a>
+                    <a href="{{ url_for('profile') }}" class="rounded-xl px-4 py-3 text-sm font-medium {% if current_endpoint == 'profile' %}bg-indigo-50 text-indigo-700{% else %}text-slate-600 hover:bg-slate-50{% endif %}">Profile</a>
+                    {% endif %}
+                    <a href="{{ url_for('logout') }}" class="rounded-xl px-4 py-3 text-sm font-medium text-rose-600 hover:bg-rose-50">Logout</a>
+                </div>
+            </div>
+            {% endif %}
+        </nav>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="space-y-3">
+                    {% for category, message in messages %}
+                    <div class="flex items-start gap-3 rounded-2xl border px-4 py-4 shadow-sm
+                        {% if category == 'error' %}border-rose-200 bg-rose-50 text-rose-700
+                        {% elif category == 'success' %}border-emerald-200 bg-emerald-50 text-emerald-700
+                        {% else %}border-indigo-200 bg-indigo-50 text-indigo-700{% endif %}">
+                        <i class="mt-0.5 fas {% if category == 'error' %}fa-circle-exclamation{% elif category == 'success' %}fa-circle-check{% else %}fa-circle-info{% endif %}"></i>
+                        <p class="text-sm font-medium">{{ message }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        {% endwith %}
+
+        <main class="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <footer class="border-t border-slate-200 bg-white">
+        <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+            <p>Prepare today. Get hired tomorrow.</p>
+            <p>WiseWin AI Interview Evaluation System</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

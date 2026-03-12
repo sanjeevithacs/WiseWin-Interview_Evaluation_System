@@ -1,0 +1,935 @@
+{% extends "base.html" %}
+
+{% block title %}Live Interview - JobSensei{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">
+                    <i class="fas fa-video text-indigo-600 mr-3"></i>
+                    Live Interview
+                </h1>
+                <p class="text-gray-600">AI-powered mock interview with real-time evaluation</p>
+            </div>
+            <div class="text-center">
+                <div class="bg-indigo-100 rounded-full p-4">
+                    <i class="fas fa-robot text-3xl text-indigo-600"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interview Setup Section -->
+    <div id="setup-section" class="bg-white rounded-lg shadow-xl p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Interview Setup</h2>
+        
+        <!-- Validation Status -->
+        <div id="validation-status" class="mb-6">
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-yellow-700">
+                            Please upload your resume and job description to start the interview
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Upload -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                    <i class="fas fa-file-upload mr-2"></i>Resume
+                </label>
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-indigo-500 transition">
+                    <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                    <p class="text-gray-600 mb-2">Drop your resume here or click to browse</p>
+                    <input type="file" id="resume-upload" accept=".pdf,.txt" class="hidden">
+                    <button onclick="document.getElementById('resume-upload').click()" 
+                            class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
+                        Choose File
+                    </button>
+                    <div id="resume-name" class="mt-2 text-sm text-gray-600"></div>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                    <i class="fas fa-briefcase mr-2"></i>Job Description
+                </label>
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-indigo-500 transition">
+                    <i class="fas fa-file-alt text-4xl text-gray-400 mb-4"></i>
+                    <p class="text-gray-600 mb-2">Drop job description here or click to browse</p>
+                    <input type="file" id="jd-upload" accept=".pdf,.txt" class="hidden">
+                    <button onclick="document.getElementById('jd-upload').click()" 
+                            class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
+                        Choose File
+                    </button>
+                    <div id="jd-name" class="mt-2 text-sm text-gray-600"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Interview Button -->
+        <div class="text-center">
+            <button id="start-interview-btn" disabled 
+                    class="bg-gray-400 text-white px-8 py-3 rounded-lg text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition">
+                <i class="fas fa-play mr-2"></i>Start Interview
+            </button>
+        </div>
+    </div>
+
+    <!-- Interview Levels Section -->
+    <div id="interview-section" class="hidden">
+        <!-- Level Progress -->
+        <div class="bg-white rounded-lg shadow-xl p-6 mb-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Interview Progress</h3>
+            <div class="grid grid-cols-4 gap-4">
+                <div id="level-1-progress" class="text-center">
+                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-microphone text-gray-600"></i>
+                    </div>
+                    <p class="text-sm font-medium">Level 1</p>
+                    <p class="text-xs text-gray-600">Self Introduction</p>
+                </div>
+                <div id="level-2-progress" class="text-center">
+                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-code text-gray-600"></i>
+                    </div>
+                    <p class="text-sm font-medium">Level 2</p>
+                    <p class="text-xs text-gray-600">Technical Round</p>
+                </div>
+                <div id="level-3-progress" class="text-center">
+                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-brain text-gray-600"></i>
+                    </div>
+                    <p class="text-sm font-medium">Level 3</p>
+                    <p class="text-xs text-gray-600">Behavioral Round</p>
+                </div>
+                <div id="level-4-progress" class="text-center">
+                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-laptop-code text-gray-600"></i>
+                    </div>
+                    <p class="text-sm font-medium">Level 4</p>
+                    <p class="text-xs text-gray-600">Coding Challenge</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Level Content -->
+        <div id="level-content" class="bg-white rounded-lg shadow-xl p-8">
+            <!-- Dynamic content will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results-section" class="hidden">
+        <div class="bg-white rounded-lg shadow-xl p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Interview Results</h2>
+            
+            <!-- Overall Score -->
+            <div class="text-center mb-8">
+                <div class="inline-block">
+                    <div class="text-6xl font-bold text-indigo-600" id="overall-score">0%</div>
+                    <p class="text-gray-600 mt-2">Overall Score</p>
+                </div>
+            </div>
+
+            <!-- Level-wise Breakdown -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-800 mb-2">Level 1</h4>
+                    <div class="text-2xl font-bold text-blue-600" id="level-1-score">0%</div>
+                    <p class="text-sm text-gray-600">Self Introduction</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-800 mb-2">Level 2</h4>
+                    <div class="text-2xl font-bold text-green-600" id="level-2-score">0%</div>
+                    <p class="text-sm text-gray-600">Technical Round</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-800 mb-2">Level 3</h4>
+                    <div class="text-2xl font-bold text-purple-600" id="level-3-score">0%</div>
+                    <p class="text-sm text-gray-600">Behavioral Round</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-800 mb-2">Level 4</h4>
+                    <div class="text-2xl font-bold text-orange-600" id="level-4-score">0%</div>
+                    <p class="text-sm text-gray-600">Coding Challenge</p>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="bg-indigo-50 rounded-lg p-6 mb-6">
+                <h4 class="font-semibold text-gray-800 mb-4">Recommendations</h4>
+                <ul id="recommendations-list" class="space-y-2">
+                    <!-- Recommendations will be populated here -->
+                </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-center space-x-4">
+                <button onclick="downloadResults()" 
+                        class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition">
+                    <i class="fas fa-download mr-2"></i>Download Results
+                </button>
+                <button onclick="restartInterview()" 
+                        class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">
+                    <i class="fas fa-redo mr-2"></i>Start New Interview
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Modal -->
+<div id="loading-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+        <div class="text-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+            <p class="text-gray-700" id="loading-message">Processing...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Include Media Recorder Script -->
+<script src="{{ url_for('static', filename='js/media_recorder.js') }}"></script>
+
+<script>
+let interviewData = {
+    resume: null,
+    jobDescription: null,
+    currentLevel: 1,
+    levelScores: {},
+    questions: {},
+    responses: {},
+    recordings: {}
+};
+
+// Media recording instances
+let mediaRecorder = null;
+let mediaPlayer = null;
+let currentRecordingIndex = 0;
+
+// File upload handlers
+document.getElementById('resume-upload').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        document.getElementById('resume-name').textContent = file.name;
+        interviewData.resume = file;
+        validateInputs();
+    }
+});
+
+document.getElementById('jd-upload').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        document.getElementById('jd-name').textContent = file.name;
+        interviewData.jobDescription = file;
+        validateInputs();
+    }
+});
+
+function validateInputs() {
+    const startBtn = document.getElementById('start-interview-btn');
+    const validationStatus = document.getElementById('validation-status');
+    
+    if (interviewData.resume && interviewData.jobDescription) {
+        startBtn.disabled = false;
+        startBtn.className = "bg-indigo-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition";
+        
+        validationStatus.innerHTML = `
+            <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-check-circle text-green-400"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-green-700">
+                            Ready to start! Both files have been uploaded.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Start interview
+document.getElementById('start-interview-btn').addEventListener('click', function() {
+    startInterview();
+});
+
+async function startInterview() {
+    showLoading('Generating personalized questions...');
+    
+    try {
+        // Upload files and generate questions
+        const formData = new FormData();
+        formData.append('resume', interviewData.resume);
+        formData.append('job_description', interviewData.jobDescription);
+        
+        const response = await fetch('/api/generate-interview-questions', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            interviewData.questions = data.questions;
+            interviewData.structured_data = data.structured_data;
+            
+            // Hide setup, show interview
+            document.getElementById('setup-section').classList.add('hidden');
+            document.getElementById('interview-section').classList.remove('hidden');
+            
+            // Start with Level 1
+            loadLevel(1);
+        } else {
+            alert('Failed to generate questions: ' + data.error);
+        }
+    } catch (error) {
+        console.error('Error starting interview:', error);
+        alert('Error starting interview. Please try again.');
+    } finally {
+        hideLoading();
+    }
+}
+
+function loadLevel(level) {
+    interviewData.currentLevel = level;
+    
+    // Update progress indicators
+    updateProgress(level);
+    
+    // Load level content
+    const levelContent = document.getElementById('level-content');
+    
+    if (level === 1) {
+        loadLevel1(levelContent);
+    } else if (level === 2) {
+        loadLevel2(levelContent);
+    } else if (level === 3) {
+        loadLevel3(levelContent);
+    } else if (level === 4) {
+        loadLevel4(levelContent);
+    }
+}
+
+function updateProgress(level) {
+    // Reset all levels
+    for (let i = 1; i <= 4; i++) {
+        const levelDiv = document.getElementById(`level-${i}-progress`);
+        const circle = levelDiv.querySelector('div');
+        const icon = levelDiv.querySelector('i');
+        
+        circle.className = 'w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-2';
+        icon.className = 'fas text-gray-600';
+        
+        if (i === 1) icon.classList.add('fa-microphone');
+        else if (i === 2) icon.classList.add('fa-code');
+        else if (i === 3) icon.classList.add('fa-brain');
+        else if (i === 4) icon.classList.add('fa-laptop-code');
+    }
+    
+    // Highlight current level
+    const currentLevelDiv = document.getElementById(`level-${level}-progress`);
+    const currentCircle = currentLevelDiv.querySelector('div');
+    const currentIcon = currentLevelDiv.querySelector('i');
+    
+    currentCircle.className = 'w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-2';
+    currentIcon.className = 'fas text-white';
+    
+    if (level === 1) currentIcon.classList.add('fa-microphone');
+    else if (level === 2) currentIcon.classList.add('fa-code');
+    else if (level === 3) currentIcon.classList.add('fa-brain');
+    else if (level === 4) currentIcon.classList.add('fa-laptop-code');
+}
+
+function loadLevel1(container) {
+    const questions = interviewData.questions.level_1 || [];
+    
+    // Initialize level state
+    interviewData.level1State = {
+        questions: questions,
+        currentQuestionIndex: 0,
+        recordings: new Array(questions.length).fill(null)
+    };
+    
+    container.innerHTML = `
+        <div class="mb-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-microphone text-blue-600 mr-2"></i>
+                Level 1: Self Introduction
+            </h3>
+            <p class="text-gray-600 mb-6">Please answer the following questions. Make sure your camera and microphone are enabled.</p>
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
+                <p class="text-sm text-blue-700">
+                    <strong>Progress:</strong> Question <span id="current-question-num">1</span> of ${questions.length} | 
+                    <span id="progress-text">0% Complete</span>
+                </p>
+            </div>
+        </div>
+        
+        <!-- Single Question Display -->
+        <div class="bg-gray-50 rounded-lg p-6" id="single-question-container">
+            <div class="flex justify-between items-center mb-4">
+                <button id="prev-btn" onclick="previousQuestion()" 
+                        class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 transition disabled:opacity-50" disabled>
+                    <i class="fas fa-chevron-left mr-2"></i>Previous
+                </button>
+                <div class="text-center">
+                    <h4 class="font-semibold text-gray-800">Question <span id="question-number">1</span></h4>
+                </div>
+                <button id="next-btn" onclick="nextQuestion()" 
+                        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                    Next<i class="fas fa-chevron-right ml-2"></i>
+                </button>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 border border-gray-200">
+                <p id="question-text" class="text-gray-800 text-lg leading-relaxed"></p>
+            </div>
+            
+            <!-- Video Preview -->
+            <div class="bg-black rounded-lg aspect-video mb-4 relative overflow-hidden">
+                <video id="video-preview" class="w-full h-full object-cover" style="display: none;"></video>
+                <div id="video-placeholder" class="w-full h-full flex items-center justify-center">
+                    <i class="fas fa-video text-white text-4xl opacity-50"></i>
+                </div>
+            </div>
+            
+            <!-- Recording Controls -->
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex items-center space-x-4">
+                    <button id="record-btn" onclick="toggleRecording()" 
+                            class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition flex items-center">
+                        <i class="fas fa-microphone mr-2"></i>
+                        <span id="record-text">Start Recording</span>
+                    </button>
+                    <button id="playback-btn" onclick="playCurrentRecording()" 
+                            class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition disabled:opacity-50" disabled>
+                        <i class="fas fa-play mr-2"></i>Play Back
+                    </button>
+                </div>
+                <div class="text-sm text-gray-600">
+                    <span id="timer">00:00</span> | 
+                    <span id="status">Ready to record</span>
+                </div>
+            </div>
+            
+            <!-- Audio Playback (hidden) -->
+            <audio id="audio-player" controls style="display: none;"></audio>
+        </div>
+        
+        <div class="mt-8 text-center">
+            <button onclick="completeLevel(1)" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                Complete Level 1 <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    `;
+    
+    // Initialize media recorder for this level
+    initializeMediaRecorder();
+    
+    // Display first question
+    displayCurrentQuestion();
+}
+
+function displayCurrentQuestion() {
+    const state = interviewData.level1State;
+    const questionText = document.getElementById('question-text');
+    const questionNumber = document.getElementById('question-number');
+    const currentQuestionNum = document.getElementById('current-question-num');
+    const progressText = document.getElementById('progress-text');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    // Update question display
+    questionText.textContent = state.questions[state.currentQuestionIndex];
+    questionNumber.textContent = state.currentQuestionIndex + 1;
+    currentQuestionNum.textContent = state.currentQuestionIndex + 1;
+    
+    // Update progress
+    const progress = Math.round(((state.currentQuestionIndex + 1) / state.questions.length) * 100);
+    progressText.textContent = `${progress}% Complete`;
+    
+    // Update navigation buttons
+    prevBtn.disabled = state.currentQuestionIndex === 0;
+    nextBtn.disabled = state.currentQuestionIndex === state.questions.length - 1;
+    
+    // Update recording UI for current question
+    updateRecordingUI(state.currentQuestionIndex);
+}
+
+function nextQuestion() {
+    const state = interviewData.level1State;
+    if (state.currentQuestionIndex < state.questions.length - 1) {
+        state.currentQuestionIndex++;
+        displayCurrentQuestion();
+    }
+}
+
+function previousQuestion() {
+    const state = interviewData.level1State;
+    if (state.currentQuestionIndex > 0) {
+        state.currentQuestionIndex--;
+        displayCurrentQuestion();
+    }
+}
+
+function updateRecordingUI(questionIndex) {
+    const recording = state.recordings[questionIndex];
+    const recordBtn = document.getElementById('record-btn');
+    const recordText = document.getElementById('record-text');
+    const status = document.getElementById('status');
+    const playbackBtn = document.getElementById('playback-btn');
+    const timer = document.getElementById('timer');
+    
+    if (recording) {
+        status.textContent = "Recording completed";
+        status.className = "text-green-600 font-medium";
+        playbackBtn.disabled = false;
+        
+        // Reset timer to show final duration
+        const minutes = Math.floor(recording.duration / 60);
+        const seconds = recording.duration % 60;
+        timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        // Reset record button
+        recordBtn.className = "bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition flex items-center";
+        recordText.textContent = "Start Recording";
+    } else {
+        status.textContent = "Ready to record";
+        status.className = "text-gray-600 font-medium";
+        playbackBtn.disabled = true;
+        timer.textContent = "00:00";
+        
+        recordBtn.className = "bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition flex items-center";
+        recordText.textContent = "Start Recording";
+    }
+}
+
+function initializeMediaRecorder() {
+    mediaRecorder = new MediaRecorder();
+    mediaPlayer = new MediaPlayer();
+    
+    // Set up event handlers
+    mediaRecorder.onTimerUpdate = (duration) => {
+        const minutes = Math.floor(duration / 60);
+        const seconds = duration % 60;
+        const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        if (currentRecordingIndex !== null) {
+            document.getElementById(`timer-${currentRecordingIndex}`).textContent = timeString;
+        }
+    };
+    
+    mediaRecorder.onRecordingComplete = (result) => {
+        console.log('Recording completed:', result);
+        
+        // Store the recording for current question
+        const state = interviewData.level1State;
+        state.recordings[state.currentQuestionIndex] = result;
+        
+        // Update UI
+        updateRecordingUI(state.currentQuestionIndex);
+    };
+    
+    mediaRecorder.onError = (error) => {
+        console.error('Recording error:', error);
+        alert(`Recording error: ${error.message}`);
+        updateRecordingUI(interviewData.level1State.currentQuestionIndex, null);
+    };
+}
+
+async function toggleRecording(questionIndex) {
+    currentRecordingIndex = questionIndex;
+    const recordBtn = document.getElementById(`record-btn-${questionIndex}`);
+    const recordText = document.getElementById(`record-text-${questionIndex}`);
+    const status = document.getElementById(`status-${questionIndex}`);
+    
+    if (!mediaRecorder.isCurrentlyRecording()) {
+        // Check browser compatibility first
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            alert('Your browser does not support media recording. Please use a modern browser like Chrome, Firefox, or Edge.');
+            return;
+        }
+        
+        if (!window.MediaRecorder) {
+            alert('MediaRecorder API is not supported in this browser. Please update your browser or use a different one.');
+            return;
+        }
+        
+        // Start recording
+        const success = await mediaRecorder.startRecording('video');
+        
+        if (success) {
+            recordBtn.className = "bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition flex items-center";
+            recordText.textContent = "Stop Recording";
+            status.textContent = "Recording...";
+            status.className = "text-red-600 font-medium";
+            
+            // Show video preview
+            const videoPreview = document.getElementById(`video-preview-${questionIndex}`);
+            const placeholder = document.getElementById(`video-placeholder-${questionIndex}`);
+            
+            if (mediaRecorder.stream) {
+                videoPreview.srcObject = mediaRecorder.stream;
+                videoPreview.style.display = 'block';
+                placeholder.style.display = 'none';
+                videoPreview.play();
+            }
+        } else {
+            // Recording failed, show error message
+            status.textContent = "Recording failed - check browser permissions";
+            status.className = "text-red-600 font-medium";
+        }
+    } else {
+        // Stop recording
+        mediaRecorder.stopRecording();
+        
+        recordBtn.className = "bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition flex items-center";
+        recordText.textContent = "Start Recording";
+        status.textContent = "Processing...";
+        status.className = "text-blue-600 font-medium";
+        
+        // Hide video preview
+        const videoPreview = document.getElementById(`video-preview-${questionIndex}`);
+        const placeholder = document.getElementById(`video-placeholder-${questionIndex}`);
+        videoPreview.style.display = 'none';
+        placeholder.style.display = 'flex';
+        videoPreview.srcObject = null;
+    }
+}
+
+function updateRecordingUI(questionIndex, result) {
+    const recordBtn = document.getElementById(`record-btn-${questionIndex}`);
+    const recordText = document.getElementById(`record-text-${questionIndex}`);
+    const status = document.getElementById(`status-${questionIndex}`);
+    const playbackBtn = document.getElementById(`playback-btn-${questionIndex}`);
+    const timer = document.getElementById(`timer-${questionIndex}`);
+    
+    if (result) {
+        status.textContent = "Recording completed";
+        status.className = "text-green-600 font-medium";
+        playbackBtn.disabled = false;
+        
+        // Reset timer to show final duration
+        const minutes = Math.floor(result.duration / 60);
+        const seconds = result.duration % 60;
+        timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    } else {
+        status.textContent = "Recording failed";
+        status.className = "text-red-600 font-medium";
+        playbackBtn.disabled = true;
+    }
+}
+
+function playRecording(questionIndex) {
+    const recording = interviewData.recordings?.level_1?.[questionIndex];
+    
+    if (!recording) {
+        alert('No recording available for this question');
+        return;
+    }
+    
+    if (recording.videoBase64) {
+        // Play video
+        mediaPlayer.playVideo(recording.videoBase64, `video-preview-${questionIndex}`);
+    } else if (recording.audioBase64) {
+        // Play audio
+        mediaPlayer.playAudio(recording.audioBase64, `audio-${questionIndex}`);
+    }
+}
+
+function loadLevel2(container) {
+    const questions = interviewData.questions.level_2 || [];
+    
+    container.innerHTML = `
+        <div class="mb-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-code text-green-600 mr-2"></i>
+                Level 2: Technical Round
+            </h3>
+            <p class="text-gray-600 mb-6">Answer the technical questions to the best of your ability.</p>
+        </div>
+        
+        <div class="space-y-6">
+            ${questions.map((q, index) => `
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-800 mb-3">Question ${index + 1}</h4>
+                    <p class="text-gray-700 mb-4">${q}</p>
+                    
+                    <textarea class="w-full h-32 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
+                              placeholder="Type your answer here..." id="level2-answer-${index}"></textarea>
+                </div>
+            `).join('')}
+        </div>
+        
+        <div class="mt-8 text-center">
+            <button onclick="completeLevel(2)" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                Complete Level 2 <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    `;
+}
+
+function loadLevel3(container) {
+    const questions = interviewData.questions.level_3 || [];
+    
+    container.innerHTML = `
+        <div class="mb-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-brain text-purple-600 mr-2"></i>
+                Level 3: Behavioral Round
+            </h3>
+            <p class="text-gray-600 mb-6">Use the STAR method to structure your answers.</p>
+        </div>
+        
+        <div class="space-y-6">
+            ${questions.map((q, index) => `
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-800 mb-3">Question ${index + 1}</h4>
+                    <p class="text-gray-700 mb-4">${q}</p>
+                    
+                    <div class="bg-purple-50 border-l-4 border-purple-400 p-4 mb-4">
+                        <p class="text-sm text-purple-700">
+                            <strong>STAR Method:</strong> Situation, Task, Action, Result
+                        </p>
+                    </div>
+                    
+                    <textarea class="w-full h-32 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
+                              placeholder="Describe your situation, task, action, and result..." id="level3-answer-${index}"></textarea>
+                </div>
+            `).join('')}
+        </div>
+        
+        <div class="mt-8 text-center">
+            <button onclick="completeLevel(3)" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                Complete Level 3 <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    `;
+}
+
+function loadLevel4(container) {
+    const questions = interviewData.questions.level_4 || [];
+    
+    container.innerHTML = `
+        <div class="mb-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-laptop-code text-orange-600 mr-2"></i>
+                Level 4: Coding Challenge
+            </h3>
+            <p class="text-gray-600 mb-6">Solve the coding problems and explain your approach.</p>
+        </div>
+        
+        <div class="space-y-6">
+            ${questions.map((q, index) => `
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="font-semibold text-gray-800 mb-3">Problem ${index + 1}</h4>
+                    <p class="text-gray-700 mb-4">${q}</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Solution</label>
+                            <textarea class="w-full h-48 p-3 border border-gray-300 rounded-lg font-mono text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
+                                      placeholder="Write your code here..." id="level4-code-${index}"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Explanation</label>
+                            <textarea class="w-full h-48 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" 
+                                      placeholder="Explain your approach..." id="level4-explanation-${index}"></textarea>
+                        </div>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+        
+        <div class="mt-8 text-center">
+            <button onclick="completeLevel(4)" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                Complete Interview <i class="fas fa-check mr-2"></i>
+            </button>
+        </div>
+    `;
+}
+
+async function completeLevel(level) {
+    showLoading('Evaluating your responses...');
+    
+    try {
+        // Collect responses based on level
+        let responses = [];
+        
+        if (level === 1) {
+            // Collect recordings for Level 1
+            const recordings = interviewData.recordings?.level_1 || [];
+            responses = recordings.map(recording => ({
+                type: recording.type,
+                duration: recording.duration,
+                audioBase64: recording.audioBase64,
+                videoBase64: recording.videoBase64
+            }));
+        } else if (level === 2) {
+            // Collect text responses for Level 2
+            const textareas = document.querySelectorAll('[id^="level2-answer-"]');
+            responses = Array.from(textareas).map(textarea => textarea.value.trim()).filter(val => val);
+        } else if (level === 3) {
+            // Collect text responses for Level 3
+            const textareas = document.querySelectorAll('[id^="level3-answer-"]');
+            responses = Array.from(textareas).map(textarea => textarea.value.trim()).filter(val => val);
+        } else if (level === 4) {
+            // Collect code and explanations for Level 4
+            const codeTextareas = document.querySelectorAll('[id^="level4-code-"]');
+            const explanationTextareas = document.querySelectorAll('[id^="level4-explanation-"]');
+            
+            const codes = Array.from(codeTextareas).map(textarea => textarea.value.trim()).filter(val => val);
+            const explanations = Array.from(explanationTextareas).map(textarea => textarea.value.trim()).filter(val => val);
+            
+            responses = {
+                codes: codes,
+                explanations: explanations
+            };
+        }
+        
+        interviewData.responses[level] = responses;
+        
+        // Evaluate level
+        const response = await fetch('/api/evaluate-level', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                level: level,
+                responses: responses,
+                structured_data: interviewData.structured_data
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            interviewData.levelScores[level] = data.score;
+            
+            if (level < 4) {
+                // Move to next level
+                loadLevel(level + 1);
+            } else {
+                // Show results
+                showResults();
+            }
+        } else {
+            alert('Evaluation failed: ' + data.error);
+        }
+    } catch (error) {
+        console.error('Error evaluating level:', error);
+        alert('Error evaluating responses. Please try again.');
+    } finally {
+        hideLoading();
+    }
+}
+
+function showResults() {
+    // Hide interview, show results
+    document.getElementById('interview-section').classList.add('hidden');
+    document.getElementById('results-section').classList.remove('hidden');
+    
+    // Calculate overall score
+    const scores = Object.values(interviewData.levelScores);
+    const overallScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+    
+    // Update UI
+    document.getElementById('overall-score').textContent = Math.round(overallScore) + '%';
+    
+    for (let i = 1; i <= 4; i++) {
+        const score = interviewData.levelScores[i] || 0;
+        document.getElementById(`level-${i}-score`).textContent = Math.round(score) + '%';
+    }
+    
+    // Add recommendations (simplified)
+    const recommendations = [
+        "Practice more technical questions to improve your coding skills",
+        "Work on structuring your behavioral responses using the STAR method",
+        "Improve communication clarity in self-introduction",
+        "Study algorithms and data structures for better problem-solving"
+    ];
+    
+    const recommendationsList = document.getElementById('recommendations-list');
+    recommendationsList.innerHTML = recommendations.map(rec => 
+        `<li class="flex items-start">
+            <i class="fas fa-lightbulb text-indigo-600 mt-1 mr-2"></i>
+            <span class="text-gray-700">${rec}</span>
+        </li>`
+    ).join('');
+}
+
+function showLoading(message) {
+    document.getElementById('loading-message').textContent = message;
+    document.getElementById('loading-modal').style.display = 'flex';
+}
+
+function hideLoading() {
+    document.getElementById('loading-modal').style.display = 'none';
+}
+
+function downloadResults() {
+    // Implement download functionality
+    alert('Results download feature coming soon!');
+}
+
+function restartInterview() {
+    // Reset interview data
+    interviewData = {
+        resume: null,
+        jobDescription: null,
+        currentLevel: 1,
+        levelScores: {},
+        questions: {},
+        responses: {},
+        recordings: {}
+    };
+    
+    // Reset UI
+    document.getElementById('results-section').classList.add('hidden');
+    document.getElementById('interview-section').classList.add('hidden');
+    document.getElementById('setup-section').classList.remove('hidden');
+    
+    // Reset file inputs
+    document.getElementById('resume-upload').value = '';
+    document.getElementById('jd-upload').value = '';
+    document.getElementById('resume-name').textContent = '';
+    document.getElementById('jd-name').textContent = '';
+    
+    // Reset start button
+    const startBtn = document.getElementById('start-interview-btn');
+    startBtn.disabled = true;
+    startBtn.className = "bg-gray-400 text-white px-8 py-3 rounded-lg text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition";
+    
+    // Reset validation status
+    document.getElementById('validation-status').innerHTML = `
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-yellow-700">
+                        Please upload your resume and job description to start the interview
+                    </p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+</script>
+{% endblock %}

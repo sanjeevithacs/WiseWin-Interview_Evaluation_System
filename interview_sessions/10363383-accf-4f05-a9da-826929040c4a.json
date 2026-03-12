@@ -1,0 +1,728 @@
+{
+  "session_id": "10363383-accf-4f05-a9da-826929040c4a",
+  "user_email": "sanjeevitha.cs2023ai-ds@sece.ac.in",
+  "created_at": "2026-03-11T13:01:00.780877",
+  "status": "completed",
+  "structured_data": {
+    "candidate_name": "Sanjeevitha - Sivakumar",
+    "candidate_skills": [
+      "Python",
+      "C++",
+      "Java",
+      "ML",
+      "EDA",
+      "Data Visualization",
+      "Python (Pandas, NumPy, Scikit-learn)",
+      "DSA",
+      "DBMS",
+      "OOPS",
+      "Git",
+      "GitHub",
+      "Anaconda",
+      "Jupyter Notebook",
+      "VS Code",
+      "Power BI",
+      "Tableau",
+      "Excel",
+      "Zoho Analytics",
+      "React",
+      "Aws",
+      "Pandas",
+      "Numpy",
+      "Machine Learning",
+      "C",
+      "Languages - Python",
+      "AI & Core - ML",
+      "Python (Pandas",
+      "Scikit -learn)",
+      "Tools - Git"
+    ],
+    "experience_years": 0,
+    "education_level": "Bachelor",
+    "job_role": "Data Analyst",
+    "required_skills": [
+      "SQL",
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "Statistics",
+      "Probability",
+      "Data Visualization",
+      "Data Analysis",
+      "Power Bi",
+      "Tableau",
+      "Strong proficiency in SQL",
+      "Python (Pandas, NumPy, Matplotlib, Seaborn)",
+      "Understanding of statistics and probability",
+      "Experience with data visualization tools",
+      "Strong analytical and communication skills",
+      "Collect, clean, and preprocess structured and unstructured data",
+      "Perform exploratory data analysis (EDA) and statistical analysis",
+      "Develop dashboards using Power BI, Tableau, or similar tools",
+      "Write optimized SQL queries to extract and analyze data",
+      "Generate reports and present findings to stakeholders",
+      "Ensure data accuracy, integrity, and compliance"
+    ],
+    "missing_skills": [
+      "SQL",
+      "Matplotlib",
+      "Seaborn",
+      "Statistics",
+      "Probability",
+      "Data Analysis",
+      "Strong proficiency in SQL",
+      "Python (Pandas, NumPy, Matplotlib, Seaborn)",
+      "Understanding of statistics and probability",
+      "Experience with data visualization tools",
+      "Strong analytical and communication skills",
+      "Collect, clean, and preprocess structured and unstructured data",
+      "Perform exploratory data analysis (EDA) and statistical analysis",
+      "Develop dashboards using Power BI, Tableau, or similar tools",
+      "Write optimized SQL queries to extract and analyze data",
+      "Generate reports and present findings to stakeholders",
+      "Ensure data accuracy, integrity, and compliance"
+    ],
+    "industry": "Technology",
+    "difficulty": "easy",
+    "passing_threshold": 60,
+    "interview_config": {
+      "difficulty": "easy",
+      "experience_level": "Entry Level",
+      "estimated_duration": 30,
+      "levels_enabled": [
+        "level_1",
+        "level_2",
+        "level_3",
+        "level_4"
+      ],
+      "scoring_weights": {
+        "level_1": 0.25,
+        "level_2": 0.25,
+        "level_3": 0.25,
+        "level_4": 0.25
+      },
+      "passing_threshold": 60
+    },
+    "interview_session_id": "10363383-accf-4f05-a9da-826929040c4a",
+    "questions": {
+      "level_1": {
+        "title": "Self Introduction",
+        "duration_seconds": 120,
+        "questions": [
+          "Please introduce yourself."
+        ]
+      },
+      "level_2": {
+        "title": "Technical Questions",
+        "duration_seconds": 90,
+        "questions": [
+          "What are the basic data types in Python?",
+          "How do you create a function in Python?",
+          "What is the difference between a list and a tuple?"
+        ]
+      },
+      "level_3": {
+        "title": "Behavioral Questions",
+        "duration_seconds": 90,
+        "questions": [
+          "Tell me about a time you had to make a difficult decision while working on SQL and how the result affected your team.",
+          "Tell me about a time you influenced a team decision without direct authority.",
+          "Give an example of a time you received constructive feedback."
+        ]
+      },
+      "level_4": {
+        "title": "Technical MCQ Round",
+        "duration_seconds": 600,
+        "questions": [
+          {
+            "id": 1,
+            "question": "For a Data Analyst interview, which answer best demonstrates practical understanding of SQL?",
+            "options": [
+              "Say that SQL is important but avoid discussing any implementation details or outcomes.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for SQL.",
+              "Claim SQL is mostly handled automatically so deep understanding is unnecessary.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of SQL."
+            ],
+            "correct_answer": 1,
+            "topic": "SQL"
+          },
+          {
+            "id": 2,
+            "question": "The job description emphasizes Python. Which option is the strongest interview response?",
+            "options": [
+              "Give a memorized definition of Python without examples, tradeoffs, or project context.",
+              "Connect Python to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+              "Claim Python is mostly handled automatically so deep understanding is unnecessary.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Python."
+            ],
+            "correct_answer": 1,
+            "topic": "Python"
+          },
+          {
+            "id": 3,
+            "question": "The job description emphasizes Pandas. Which option is the strongest interview response?",
+            "options": [
+              "Say that Pandas is important but avoid discussing any implementation details or outcomes.",
+              "Give a memorized definition of Pandas without examples, tradeoffs, or project context.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for Pandas.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Pandas."
+            ],
+            "correct_answer": 2,
+            "topic": "Pandas"
+          },
+          {
+            "id": 4,
+            "question": "Based on this candidate profile and role, which action best shows readiness in NumPy?",
+            "options": [
+              "Say that NumPy is important but avoid discussing any implementation details or outcomes.",
+              "Claim NumPy is mostly handled automatically so deep understanding is unnecessary.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of NumPy.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for NumPy."
+            ],
+            "correct_answer": 3,
+            "topic": "NumPy"
+          },
+          {
+            "id": 5,
+            "question": "For a Data Analyst interview, which answer best demonstrates practical understanding of Matplotlib?",
+            "options": [
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Matplotlib.",
+              "Give a memorized definition of Matplotlib without examples, tradeoffs, or project context.",
+              "Describe where Matplotlib fits in the system, why it was chosen, and what constraints it solved.",
+              "Claim Matplotlib is mostly handled automatically so deep understanding is unnecessary."
+            ],
+            "correct_answer": 2,
+            "topic": "Matplotlib"
+          },
+          {
+            "id": 6,
+            "question": "Based on this candidate profile and role, which action best shows readiness in Seaborn?",
+            "options": [
+              "Claim Seaborn is mostly handled automatically so deep understanding is unnecessary.",
+              "Give a memorized definition of Seaborn without examples, tradeoffs, or project context.",
+              "Say that Seaborn is important but avoid discussing any implementation details or outcomes.",
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Seaborn."
+            ],
+            "correct_answer": 3,
+            "topic": "Seaborn"
+          },
+          {
+            "id": 7,
+            "question": "For a Data Analyst interview, which answer best demonstrates practical understanding of Statistics?",
+            "options": [
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Statistics.",
+              "Connect Statistics to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+              "Give a memorized definition of Statistics without examples, tradeoffs, or project context.",
+              "Say that Statistics is important but avoid discussing any implementation details or outcomes."
+            ],
+            "correct_answer": 1,
+            "topic": "Statistics"
+          },
+          {
+            "id": 8,
+            "question": "The job description emphasizes Probability. Which option is the strongest interview response?",
+            "options": [
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Probability.",
+              "Claim Probability is mostly handled automatically so deep understanding is unnecessary.",
+              "Describe where Probability fits in the system, why it was chosen, and what constraints it solved.",
+              "Say that Probability is important but avoid discussing any implementation details or outcomes."
+            ],
+            "correct_answer": 2,
+            "topic": "Probability"
+          },
+          {
+            "id": 9,
+            "question": "Which statement would be the most credible answer for a Data Analyst candidate discussing Data Visualization?",
+            "options": [
+              "Claim Data Visualization is mostly handled automatically so deep understanding is unnecessary.",
+              "Say that Data Visualization is important but avoid discussing any implementation details or outcomes.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for Data Visualization.",
+              "Give a memorized definition of Data Visualization without examples, tradeoffs, or project context."
+            ],
+            "correct_answer": 2,
+            "topic": "Data Visualization"
+          },
+          {
+            "id": 10,
+            "question": "The job description emphasizes Data Analysis. Which option is the strongest interview response?",
+            "options": [
+              "Connect Data Analysis to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+              "Claim Data Analysis is mostly handled automatically so deep understanding is unnecessary.",
+              "Say that Data Analysis is important but avoid discussing any implementation details or outcomes.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Data Analysis."
+            ],
+            "correct_answer": 0,
+            "topic": "Data Analysis"
+          },
+          {
+            "id": 11,
+            "question": "Based on this candidate profile and role, which action best shows readiness in Power Bi?",
+            "options": [
+              "Say that Power Bi is important but avoid discussing any implementation details or outcomes.",
+              "Claim Power Bi is mostly handled automatically so deep understanding is unnecessary.",
+              "Give a memorized definition of Power Bi without examples, tradeoffs, or project context.",
+              "Connect Power Bi to production decisions, debugging approach, and quality checks instead of only giving a definition."
+            ],
+            "correct_answer": 3,
+            "topic": "Power Bi"
+          },
+          {
+            "id": 12,
+            "question": "Based on this candidate profile and role, which action best shows readiness in Tableau?",
+            "options": [
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Tableau.",
+              "Say that Tableau is important but avoid discussing any implementation details or outcomes.",
+              "Give a memorized definition of Tableau without examples, tradeoffs, or project context.",
+              "Connect Tableau to production decisions, debugging approach, and quality checks instead of only giving a definition."
+            ],
+            "correct_answer": 3,
+            "topic": "Tableau"
+          },
+          {
+            "id": 13,
+            "question": "The job description emphasizes Strong proficiency in SQL. Which option is the strongest interview response?",
+            "options": [
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Strong proficiency in SQL.",
+              "Say that Strong proficiency in SQL is important but avoid discussing any implementation details or outcomes.",
+              "Claim Strong proficiency in SQL is mostly handled automatically so deep understanding is unnecessary.",
+              "Connect Strong proficiency in SQL to production decisions, debugging approach, and quality checks instead of only giving a definition."
+            ],
+            "correct_answer": 3,
+            "topic": "Strong proficiency in SQL"
+          },
+          {
+            "id": 14,
+            "question": "Which statement would be the most credible answer for a Data Analyst candidate discussing Python (Pandas, NumPy, Matplotlib, Seaborn)?",
+            "options": [
+              "Claim Python (Pandas, NumPy, Matplotlib, Seaborn) is mostly handled automatically so deep understanding is unnecessary.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Python (Pandas, NumPy, Matplotlib, Seaborn).",
+              "Give a memorized definition of Python (Pandas, NumPy, Matplotlib, Seaborn) without examples, tradeoffs, or project context.",
+              "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Python (Pandas, NumPy, Matplotlib, Seaborn)."
+            ],
+            "correct_answer": 3,
+            "topic": "Python (Pandas, NumPy, Matplotlib, Seaborn)"
+          },
+          {
+            "id": 15,
+            "question": "For a Data Analyst interview, which answer best demonstrates practical understanding of Understanding of statistics and probability?",
+            "options": [
+              "Give a memorized definition of Understanding of statistics and probability without examples, tradeoffs, or project context.",
+              "Give a project-based example showing implementation details, failure cases, and measurable impact for Understanding of statistics and probability.",
+              "Focus on unrelated tools and hope the interviewer infers knowledge of Understanding of statistics and probability.",
+              "Say that Understanding of statistics and probability is important but avoid discussing any implementation details or outcomes."
+            ],
+            "correct_answer": 1,
+            "topic": "Understanding of statistics and probability"
+          }
+        ]
+      }
+    }
+  },
+  "current_level": 5,
+  "level_results": {
+    "level_1": {
+      "score": 5.0,
+      "feedback": [
+        "Responses were extremely short and were scored very strictly."
+      ],
+      "evidence": {
+        "responses_recorded": 1,
+        "average_duration_seconds": 3.0,
+        "completion_ratio": 1.0
+      },
+      "level_breakdown": {
+        "communication": 5.0,
+        "confidence": 1.0,
+        "body_language": 0
+      },
+      "improvement_suggestions": [
+        "Spend longer on each answer and explain your reasoning before ending the recording.",
+        "Open with a tighter summary of your background, current strengths, and fit for the role."
+      ],
+      "total_score": 5.0
+    },
+    "level_2": {
+      "score": 5.0,
+      "feedback": [
+        "Responses were extremely short and were scored very strictly."
+      ],
+      "evidence": {
+        "responses_recorded": 3,
+        "average_duration_seconds": 2.3,
+        "completion_ratio": 1.0
+      },
+      "level_breakdown": {
+        "technical_knowledge": 5.0,
+        "communication": 0,
+        "confidence": 0
+      },
+      "improvement_suggestions": [
+        "Spend longer on each answer and explain your reasoning before ending the recording.",
+        "Use concrete project examples, tradeoffs, and implementation details in technical answers."
+      ],
+      "total_score": 5.0
+    },
+    "level_3": {
+      "score": 5.0,
+      "feedback": [
+        "Responses were extremely short and were scored very strictly."
+      ],
+      "evidence": {
+        "responses_recorded": 3,
+        "average_duration_seconds": 2.0,
+        "completion_ratio": 1.0
+      },
+      "level_breakdown": {
+        "behavioral_intelligence": 5.0,
+        "sentiment": 0,
+        "communication": 0
+      },
+      "improvement_suggestions": [
+        "Spend longer on each answer and explain your reasoning before ending the recording.",
+        "Use STAR more explicitly by covering the situation, your actions, and the result."
+      ],
+      "total_score": 5.0
+    },
+    "level_4": {
+      "score": 33.3,
+      "feedback": [
+        "You answered 5 out of 15 MCQs correctly."
+      ],
+      "evidence": {
+        "correct_answers": 5,
+        "total_questions": 15
+      },
+      "level_breakdown": {
+        "mcq_accuracy": 33.3
+      },
+      "improvement_suggestions": [
+        "Review the concepts you missed in SQL, Pandas, NumPy, Matplotlib.",
+        "Practice answering technical questions with stronger concept-to-project mapping."
+      ],
+      "total_score": 33.3
+    }
+  },
+  "questions": {
+    "level_1": {
+      "title": "Self Introduction",
+      "duration_seconds": 120,
+      "questions": [
+        "Please introduce yourself."
+      ]
+    },
+    "level_2": {
+      "title": "Technical Questions",
+      "duration_seconds": 90,
+      "questions": [
+        "What are the basic data types in Python?",
+        "How do you create a function in Python?",
+        "What is the difference between a list and a tuple?"
+      ]
+    },
+    "level_3": {
+      "title": "Behavioral Questions",
+      "duration_seconds": 90,
+      "questions": [
+        "Tell me about a time you had to make a difficult decision while working on SQL and how the result affected your team.",
+        "Tell me about a time you influenced a team decision without direct authority.",
+        "Give an example of a time you received constructive feedback."
+      ]
+    },
+    "level_4": {
+      "title": "Technical MCQ Round",
+      "duration_seconds": 600,
+      "questions": [
+        {
+          "id": 1,
+          "question": "For a Data Analyst interview, which answer best demonstrates practical understanding of SQL?",
+          "options": [
+            "Say that SQL is important but avoid discussing any implementation details or outcomes.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for SQL.",
+            "Claim SQL is mostly handled automatically so deep understanding is unnecessary.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of SQL."
+          ],
+          "correct_answer": 1,
+          "topic": "SQL"
+        },
+        {
+          "id": 2,
+          "question": "The job description emphasizes Python. Which option is the strongest interview response?",
+          "options": [
+            "Give a memorized definition of Python without examples, tradeoffs, or project context.",
+            "Connect Python to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+            "Claim Python is mostly handled automatically so deep understanding is unnecessary.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Python."
+          ],
+          "correct_answer": 1,
+          "topic": "Python"
+        },
+        {
+          "id": 3,
+          "question": "The job description emphasizes Pandas. Which option is the strongest interview response?",
+          "options": [
+            "Say that Pandas is important but avoid discussing any implementation details or outcomes.",
+            "Give a memorized definition of Pandas without examples, tradeoffs, or project context.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for Pandas.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Pandas."
+          ],
+          "correct_answer": 2,
+          "topic": "Pandas"
+        },
+        {
+          "id": 4,
+          "question": "Based on this candidate profile and role, which action best shows readiness in NumPy?",
+          "options": [
+            "Say that NumPy is important but avoid discussing any implementation details or outcomes.",
+            "Claim NumPy is mostly handled automatically so deep understanding is unnecessary.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of NumPy.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for NumPy."
+          ],
+          "correct_answer": 3,
+          "topic": "NumPy"
+        },
+        {
+          "id": 5,
+          "question": "For a Data Analyst interview, which answer best demonstrates practical understanding of Matplotlib?",
+          "options": [
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Matplotlib.",
+            "Give a memorized definition of Matplotlib without examples, tradeoffs, or project context.",
+            "Describe where Matplotlib fits in the system, why it was chosen, and what constraints it solved.",
+            "Claim Matplotlib is mostly handled automatically so deep understanding is unnecessary."
+          ],
+          "correct_answer": 2,
+          "topic": "Matplotlib"
+        },
+        {
+          "id": 6,
+          "question": "Based on this candidate profile and role, which action best shows readiness in Seaborn?",
+          "options": [
+            "Claim Seaborn is mostly handled automatically so deep understanding is unnecessary.",
+            "Give a memorized definition of Seaborn without examples, tradeoffs, or project context.",
+            "Say that Seaborn is important but avoid discussing any implementation details or outcomes.",
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Seaborn."
+          ],
+          "correct_answer": 3,
+          "topic": "Seaborn"
+        },
+        {
+          "id": 7,
+          "question": "For a Data Analyst interview, which answer best demonstrates practical understanding of Statistics?",
+          "options": [
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Statistics.",
+            "Connect Statistics to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+            "Give a memorized definition of Statistics without examples, tradeoffs, or project context.",
+            "Say that Statistics is important but avoid discussing any implementation details or outcomes."
+          ],
+          "correct_answer": 1,
+          "topic": "Statistics"
+        },
+        {
+          "id": 8,
+          "question": "The job description emphasizes Probability. Which option is the strongest interview response?",
+          "options": [
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Probability.",
+            "Claim Probability is mostly handled automatically so deep understanding is unnecessary.",
+            "Describe where Probability fits in the system, why it was chosen, and what constraints it solved.",
+            "Say that Probability is important but avoid discussing any implementation details or outcomes."
+          ],
+          "correct_answer": 2,
+          "topic": "Probability"
+        },
+        {
+          "id": 9,
+          "question": "Which statement would be the most credible answer for a Data Analyst candidate discussing Data Visualization?",
+          "options": [
+            "Claim Data Visualization is mostly handled automatically so deep understanding is unnecessary.",
+            "Say that Data Visualization is important but avoid discussing any implementation details or outcomes.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for Data Visualization.",
+            "Give a memorized definition of Data Visualization without examples, tradeoffs, or project context."
+          ],
+          "correct_answer": 2,
+          "topic": "Data Visualization"
+        },
+        {
+          "id": 10,
+          "question": "The job description emphasizes Data Analysis. Which option is the strongest interview response?",
+          "options": [
+            "Connect Data Analysis to production decisions, debugging approach, and quality checks instead of only giving a definition.",
+            "Claim Data Analysis is mostly handled automatically so deep understanding is unnecessary.",
+            "Say that Data Analysis is important but avoid discussing any implementation details or outcomes.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Data Analysis."
+          ],
+          "correct_answer": 0,
+          "topic": "Data Analysis"
+        },
+        {
+          "id": 11,
+          "question": "Based on this candidate profile and role, which action best shows readiness in Power Bi?",
+          "options": [
+            "Say that Power Bi is important but avoid discussing any implementation details or outcomes.",
+            "Claim Power Bi is mostly handled automatically so deep understanding is unnecessary.",
+            "Give a memorized definition of Power Bi without examples, tradeoffs, or project context.",
+            "Connect Power Bi to production decisions, debugging approach, and quality checks instead of only giving a definition."
+          ],
+          "correct_answer": 3,
+          "topic": "Power Bi"
+        },
+        {
+          "id": 12,
+          "question": "Based on this candidate profile and role, which action best shows readiness in Tableau?",
+          "options": [
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Tableau.",
+            "Say that Tableau is important but avoid discussing any implementation details or outcomes.",
+            "Give a memorized definition of Tableau without examples, tradeoffs, or project context.",
+            "Connect Tableau to production decisions, debugging approach, and quality checks instead of only giving a definition."
+          ],
+          "correct_answer": 3,
+          "topic": "Tableau"
+        },
+        {
+          "id": 13,
+          "question": "The job description emphasizes Strong proficiency in SQL. Which option is the strongest interview response?",
+          "options": [
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Strong proficiency in SQL.",
+            "Say that Strong proficiency in SQL is important but avoid discussing any implementation details or outcomes.",
+            "Claim Strong proficiency in SQL is mostly handled automatically so deep understanding is unnecessary.",
+            "Connect Strong proficiency in SQL to production decisions, debugging approach, and quality checks instead of only giving a definition."
+          ],
+          "correct_answer": 3,
+          "topic": "Strong proficiency in SQL"
+        },
+        {
+          "id": 14,
+          "question": "Which statement would be the most credible answer for a Data Analyst candidate discussing Python (Pandas, NumPy, Matplotlib, Seaborn)?",
+          "options": [
+            "Claim Python (Pandas, NumPy, Matplotlib, Seaborn) is mostly handled automatically so deep understanding is unnecessary.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Python (Pandas, NumPy, Matplotlib, Seaborn).",
+            "Give a memorized definition of Python (Pandas, NumPy, Matplotlib, Seaborn) without examples, tradeoffs, or project context.",
+            "Explain a concrete use case, tradeoffs, and how you validated the outcome when using Python (Pandas, NumPy, Matplotlib, Seaborn)."
+          ],
+          "correct_answer": 3,
+          "topic": "Python (Pandas, NumPy, Matplotlib, Seaborn)"
+        },
+        {
+          "id": 15,
+          "question": "For a Data Analyst interview, which answer best demonstrates practical understanding of Understanding of statistics and probability?",
+          "options": [
+            "Give a memorized definition of Understanding of statistics and probability without examples, tradeoffs, or project context.",
+            "Give a project-based example showing implementation details, failure cases, and measurable impact for Understanding of statistics and probability.",
+            "Focus on unrelated tools and hope the interviewer infers knowledge of Understanding of statistics and probability.",
+            "Say that Understanding of statistics and probability is important but avoid discussing any implementation details or outcomes."
+          ],
+          "correct_answer": 1,
+          "topic": "Understanding of statistics and probability"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "level_1": [
+      {
+        "duration": 3,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/3932c6ee-5bcf-4dd0-ac9b-39117c5c69e0",
+        "recordingUrl": "/recordings/level1_q0_20260311_130106_034142.webm"
+      }
+    ],
+    "level_2": [
+      {
+        "duration": 2,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/fa3b35ff-60a2-4fd7-9fbc-7ad0b79900f8",
+        "recordingUrl": "/recordings/level2_q0_20260311_130113_249999.webm"
+      },
+      {
+        "duration": 3,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/9afacd9d-58e7-46e1-889d-78013fdd705d",
+        "recordingUrl": "/recordings/level2_q1_20260311_130122_162946.webm"
+      },
+      {
+        "duration": 2,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/c33bda66-1871-4c2c-b9c2-e9e9dd66d355",
+        "recordingUrl": "/recordings/level2_q2_20260311_130128_424933.webm"
+      }
+    ],
+    "level_3": [
+      {
+        "duration": 2,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/769a5d8c-f042-4274-bc0f-01e385eb9069",
+        "recordingUrl": "/recordings/level3_q0_20260311_130134_081447.webm"
+      },
+      {
+        "duration": 2,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/b36c8a5a-4734-4bd6-93a2-1e210a1e0c86",
+        "recordingUrl": "/recordings/level3_q1_20260311_130139_801743.webm"
+      },
+      {
+        "duration": 2,
+        "mimeType": "video/webm;codecs=vp9,opus",
+        "blobUrl": "blob:http://127.0.0.1:5000/00e98c45-9198-4998-85fb-9a774a961914",
+        "recordingUrl": "/recordings/level3_q2_20260311_130144_642174.webm"
+      }
+    ],
+    "level_4": {
+      "1": 0,
+      "2": 1,
+      "3": 0,
+      "4": 2,
+      "5": 0,
+      "6": 3,
+      "7": 1,
+      "8": 2,
+      "9": 0,
+      "10": 3,
+      "11": 3,
+      "12": 1,
+      "13": 1,
+      "14": 0,
+      "15": 2
+    }
+  },
+  "scores": {
+    "level_1": 5.0,
+    "level_2": 5.0,
+    "level_3": 5.0,
+    "level_4": 33.3
+  },
+  "feedback": {
+    "level_1": [
+      "Responses were extremely short and were scored very strictly."
+    ],
+    "level_2": [
+      "Responses were extremely short and were scored very strictly."
+    ],
+    "level_3": [
+      "Responses were extremely short and were scored very strictly."
+    ],
+    "level_4": [
+      "You answered 5 out of 15 MCQs correctly."
+    ]
+  },
+  "suggestions": {
+    "level_1": [
+      "Spend longer on each answer and explain your reasoning before ending the recording.",
+      "Open with a tighter summary of your background, current strengths, and fit for the role."
+    ],
+    "level_2": [
+      "Spend longer on each answer and explain your reasoning before ending the recording.",
+      "Use concrete project examples, tradeoffs, and implementation details in technical answers."
+    ],
+    "level_3": [
+      "Spend longer on each answer and explain your reasoning before ending the recording.",
+      "Use STAR more explicitly by covering the situation, your actions, and the result."
+    ],
+    "level_4": [
+      "Review the concepts you missed in SQL, Pandas, NumPy, Matplotlib.",
+      "Practice answering technical questions with stronger concept-to-project mapping."
+    ]
+  },
+  "completion_time": "2026-03-11T13:02:07.942749",
+  "total_duration": 67,
+  "updated_at": "2026-03-11T13:02:07.975782"
+}

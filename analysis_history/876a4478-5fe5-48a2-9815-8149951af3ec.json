@@ -1,0 +1,359 @@
+{
+  "analysis_id": "876a4478-5fe5-48a2-9815-8149951af3ec",
+  "user_email": "sanjeevitha.cs2023ai-ds@sece.ac.in",
+  "created_at": "2026-03-11T13:26:30.149544",
+  "analysis": {
+    "resume_analysis": {
+      "contact": {
+        "name": "Sanjeevitha Sivakumar",
+        "email": "sanjeevithacs@gmail.com",
+        "phone": "2023 -2027"
+      },
+      "skills": [
+        "Python",
+        "C++",
+        "Java",
+        "ML",
+        "EDA",
+        "Data Visualization",
+        "Python (Pandas, NumPy, Scikit-learn)",
+        "DSA",
+        "DBMS",
+        "OOPS",
+        "Git",
+        "GitHub",
+        "Anaconda",
+        "Jupyter Notebook",
+        "VS Code",
+        "Power BI",
+        "Tableau",
+        "Excel",
+        "Zoho Analytics",
+        "React",
+        "Aws",
+        "Pandas",
+        "Numpy",
+        "Machine Learning",
+        "C",
+        "Languages - Python",
+        "AI & Core - ML",
+        "Python (Pandas",
+        "Scikit -learn)",
+        "Tools - Git"
+      ],
+      "experiences": [
+        {
+          "position": "MERN Stack Intern",
+          "company": "G-Zoft Tech Solution",
+          "description": "Acquired hands-on experience in MERN stack development, building scalable full-stack applications with efficient frontend–backend integration. Implemented and consumed RESTful APIs with optimized backend logic to improve performance and data flow. Worked on authentication, authorization, and secure database operations, ensuring data integrity and application security."
+        }
+      ],
+      "education": [
+        {
+          "degree": "B.Tech (AI&DS)",
+          "institution": "Sri Eshwar College of Engineering",
+          "field": "Artificial Intelligence and Data Science"
+        },
+        {
+          "degree": "HSC",
+          "institution": "Dr.V.Genguswamy Naidu Matric higher Secondary School",
+          "field": ""
+        },
+        {
+          "degree": "SSLC",
+          "institution": "Dr.V.Genguswamy Naidu Matric higher Secondary School",
+          "field": ""
+        },
+        {
+          "degree": "B.Tech (AI&DS) - Sri Eshwar College of Engineering CGPA : 8.6(upto 5th sem)",
+          "institution": "2023 -2027",
+          "field": ""
+        },
+        {
+          "degree": "INTERSHIP",
+          "institution": "MERN Stack Intern | G -Zoft Tech Solution [Jan -2025]",
+          "field": ""
+        }
+      ],
+      "summary": ""
+    },
+    "job_analysis": {
+      "title": "Data Analyst",
+      "company": "Not specified",
+      "requirements": [
+        "Strong proficiency in SQL",
+        "Python (Pandas, NumPy, Matplotlib, Seaborn)",
+        "Understanding of statistics and probability",
+        "Experience with data visualization tools",
+        "Strong analytical and communication skills",
+        "Collect, clean, and preprocess structured and unstructured data",
+        "Perform exploratory data analysis (EDA) and statistical analysis",
+        "Develop dashboards using Power BI, Tableau, or similar tools",
+        "Write optimized SQL queries to extract and analyze data",
+        "Generate reports and present findings to stakeholders",
+        "Ensure data accuracy, integrity, and compliance"
+      ],
+      "skills": [
+        "SQL",
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "Statistics",
+        "Probability",
+        "Data Visualization",
+        "Data Analysis",
+        "Power Bi",
+        "Tableau"
+      ],
+      "experience_level": "Not specified",
+      "education_required": "Not specified"
+    },
+    "score_one": {
+      "ats_best_practices": {
+        "name": "ATS Best Practices",
+        "score": 76.2,
+        "weight": 15.0,
+        "feedback": "ATS readiness is based on whether the resume exposes the key sections cleanly.",
+        "evidence": [
+          "1 experience entries listed",
+          "Education section present",
+          "30 skills extracted"
+        ],
+        "missing": [
+          "Missing a clear professional summary"
+        ]
+      },
+      "keywords_skills": {
+        "name": "Keywords & Skills",
+        "score": 50.0,
+        "weight": 25.0,
+        "feedback": "Keyword match is computed from direct and fuzzy overlap between resume skills and job skills.",
+        "evidence": [
+          "Python",
+          "Pandas",
+          "Numpy",
+          "Data Visualization",
+          "Power BI",
+          "Tableau"
+        ],
+        "missing": [
+          "SQL",
+          "Matplotlib",
+          "Seaborn",
+          "Statistics",
+          "Probability",
+          "Data Analysis"
+        ]
+      },
+      "experience_abilities": {
+        "name": "Experience & Abilities",
+        "score": 77.5,
+        "weight": 20.0,
+        "feedback": "Experience score reflects stated years, role history, and how much experience data was extracted.",
+        "evidence": [
+          "Estimated experience evidence: 1 year(s)",
+          "1 role(s) detected"
+        ],
+        "missing": []
+      },
+      "requirements_qualifications": {
+        "name": "Requirements & Qualifications",
+        "score": 36.4,
+        "weight": 20.0,
+        "feedback": "Qualification score is based on how many JD requirements are supported by resume content.",
+        "evidence": [
+          "Python",
+          "Python C++ Java ML EDA Data Visualization Python (Pandas, NumPy, Scikit-learn) DSA DBMS OOPS Git GitHub Anaconda Jupyter Notebook VS Code Power BI Tableau Excel Zoho Analytics React Aws Pandas Numpy Machine Learning C Languages - Python AI & Core - ML Python (Pandas Scikit -learn) Tools - Git MERN Stack Intern G-Zoft Tech Solution Acquired hands-on experience in MERN stack development, building scalable full-stack applications with efficient frontend–backend integration. Implemented and consumed RESTful APIs with optimized backend logic to improve performance and data flow. Worked on authentication, authorization, and secure database operations, ensuring data integrity and application security. B.Tech (AI&DS) Artificial Intelligence and Data Science Sri Eshwar College of Engineering HSC  Dr.V.Genguswamy Naidu Matric higher Secondary School SSLC  Dr.V.Genguswamy Naidu Matric higher Secondary School B.Tech (AI&DS) - Sri Eshwar College of Engineering CGPA : 8.6(upto 5th sem)  2023 -2027 INTERSHIP  MERN Stack Intern | G -Zoft Tech Solution [Jan -2025]",
+          "EDA",
+          "Power BI"
+        ],
+        "missing": [
+          "Strong proficiency in SQL",
+          "Understanding of statistics and probability",
+          "Strong analytical and communication skills",
+          "Collect, clean, and preprocess structured and unstructured data",
+          "Write optimized SQL queries to extract and analyze data",
+          "Generate reports and present findings to stakeholders",
+          "Ensure data accuracy, integrity, and compliance"
+        ]
+      },
+      "measurable_results": {
+        "name": "Measurable Results",
+        "score": 90.0,
+        "weight": 10.0,
+        "feedback": "Measured by the presence of numbers, percentages, and quantified impact statements.",
+        "evidence": [
+          "8.6",
+          "5",
+          "2023",
+          "2027",
+          "2025"
+        ],
+        "missing": []
+      },
+      "action_verbs": {
+        "name": "Action Verbs",
+        "score": 36.0,
+        "weight": 5.0,
+        "feedback": "Scores rise when experience bullets use strong action-oriented language.",
+        "evidence": [
+          "implemented",
+          "optimized"
+        ],
+        "missing": [
+          "Use stronger action verbs in experience bullets"
+        ]
+      },
+      "word_count": {
+        "name": "Word Count",
+        "score": 50.0,
+        "weight": 5.0,
+        "feedback": "Resume length is likely hurting scanability or depth.",
+        "evidence": [
+          "Estimated word count: 149"
+        ],
+        "missing": [
+          "Current estimated word count is 149"
+        ]
+      },
+      "total_match_score": 60.0
+    },
+    "score_two": {
+      "overall_qualification": {
+        "name": "Overall Qualification",
+        "score": 39.9,
+        "weight": 30.0,
+        "feedback": "Overall qualification is derived from technical overlap, relevant experience, soft-skill signals, and education alignment.",
+        "evidence": [
+          "6 matched technical skill(s)",
+          "1 experience entry(ies) detected"
+        ],
+        "missing": [
+          "SQL",
+          "Matplotlib",
+          "Seaborn",
+          "Statistics",
+          "Probability",
+          "Data Analysis"
+        ]
+      },
+      "technical_skills": {
+        "name": "Technical Skills",
+        "score": 50.0,
+        "weight": 30.0,
+        "feedback": "Technical fit is based on fuzzy overlap between resume skills and JD skills.",
+        "evidence": [
+          "Python",
+          "Pandas",
+          "Numpy",
+          "Data Visualization",
+          "Power BI",
+          "Tableau"
+        ],
+        "missing": [
+          "SQL",
+          "Matplotlib",
+          "Seaborn",
+          "Statistics",
+          "Probability",
+          "Data Analysis"
+        ]
+      },
+      "soft_skills": {
+        "name": "Soft Skills",
+        "score": 60.0,
+        "weight": 20.0,
+        "feedback": "Soft-skill alignment is inferred from overlap with collaboration and communication signals in the JD.",
+        "evidence": [
+          "communication"
+        ],
+        "missing": []
+      },
+      "experience_relevance": {
+        "name": "Experience Relevance",
+        "score": 11.1,
+        "weight": 15.0,
+        "feedback": "Experience relevance measures whether role titles and experience descriptions support the target role requirements.",
+        "evidence": [
+          "Python C++ Java ML EDA Data Visualization Python (Pandas, NumPy, Scikit-learn) DSA DBMS OOPS Git GitHub Anaconda Jupyter Notebook VS Code Power BI Tableau Excel Zoho Analytics React Aws Pandas Numpy Machine Learning C Languages - Python AI & Core - ML Python (Pandas Scikit -learn) Tools - Git MERN Stack Intern G-Zoft Tech Solution Acquired hands-on experience in MERN stack development, building scalable full-stack applications with efficient frontend–backend integration. Implemented and consumed RESTful APIs with optimized backend logic to improve performance and data flow. Worked on authentication, authorization, and secure database operations, ensuring data integrity and application security. B.Tech (AI&DS) Artificial Intelligence and Data Science Sri Eshwar College of Engineering HSC  Dr.V.Genguswamy Naidu Matric higher Secondary School SSLC  Dr.V.Genguswamy Naidu Matric higher Secondary School B.Tech (AI&DS) - Sri Eshwar College of Engineering CGPA : 8.6(upto 5th sem)  2023 -2027 INTERSHIP  MERN Stack Intern | G -Zoft Tech Solution [Jan -2025]"
+        ],
+        "missing": [
+          "Data Analyst",
+          "Strong proficiency in SQL",
+          "Python (Pandas, NumPy, Matplotlib, Seaborn)",
+          "Understanding of statistics and probability",
+          "Strong analytical and communication skills",
+          "Collect, clean, and preprocess structured and unstructured data",
+          "Perform exploratory data analysis (EDA) and statistical analysis",
+          "Develop dashboards using Power BI, Tableau, or similar tools"
+        ]
+      },
+      "education_alignment": {
+        "name": "Education Alignment",
+        "score": 35.0,
+        "weight": 5.0,
+        "feedback": "Education alignment compares extracted education data against the JD education requirement.",
+        "evidence": [
+          "B.Tech (AI&DS) Artificial Intelligence and Data Science HSC  SSLC  B.Tech (AI&DS) - Sri Eshwar College of Engineering CGPA : 8.6(upto 5th sem)  INTERSHIP"
+        ],
+        "missing": [
+          "Not specified"
+        ]
+      },
+      "total_qualification_score": 42.4
+    },
+    "recommendations": [
+      "Add or strengthen evidence for these JD skills if you have used them: SQL, Matplotlib, Seaborn, Statistics, Probability, Data Analysis.",
+      "Address these job requirements more directly in your resume bullets: Strong proficiency in SQL, Understanding of statistics and probability, Strong analytical and communication skills, Collect, clean, and preprocess structured and unstructured data.",
+      "Start more bullets with strong action verbs like built, optimized, led, automated, or reduced.",
+      "Reorder projects and experience so the most relevant work for this job appears first."
+    ]
+  },
+  "diagnostics": {
+    "resume_skill_count": 30,
+    "job_skill_count": 12,
+    "matched_skill_count": 6,
+    "missing_skill_count": 6,
+    "matched_skills": [
+      "Python",
+      "Pandas",
+      "Numpy",
+      "Data Visualization",
+      "Power BI",
+      "Tableau"
+    ],
+    "missing_skills": [
+      "SQL",
+      "Matplotlib",
+      "Seaborn",
+      "Statistics",
+      "Probability",
+      "Data Analysis"
+    ],
+    "requirements_covered": [
+      "Python",
+      "Python C++ Java ML EDA Data Visualization Python (Pandas, NumPy, Scikit-learn) DSA DBMS OOPS Git GitHub Anaconda Jupyter Notebook VS Code Power BI Tableau Excel Zoho Analytics React Aws Pandas Numpy Machine Learning C Languages - Python AI & Core - ML Python (Pandas Scikit -learn) Tools - Git MERN Stack Intern G-Zoft Tech Solution Acquired hands-on experience in MERN stack development, building scalable full-stack applications with efficient frontend–backend integration. Implemented and consumed RESTful APIs with optimized backend logic to improve performance and data flow. Worked on authentication, authorization, and secure database operations, ensuring data integrity and application security. B.Tech (AI&DS) Artificial Intelligence and Data Science Sri Eshwar College of Engineering HSC  Dr.V.Genguswamy Naidu Matric higher Secondary School SSLC  Dr.V.Genguswamy Naidu Matric higher Secondary School B.Tech (AI&DS) - Sri Eshwar College of Engineering CGPA : 8.6(upto 5th sem)  2023 -2027 INTERSHIP  MERN Stack Intern | G -Zoft Tech Solution [Jan -2025]",
+      "EDA",
+      "Power BI"
+    ],
+    "requirements_missing": [
+      "Strong proficiency in SQL",
+      "Understanding of statistics and probability",
+      "Strong analytical and communication skills",
+      "Collect, clean, and preprocess structured and unstructured data",
+      "Write optimized SQL queries to extract and analyze data",
+      "Generate reports and present findings to stakeholders",
+      "Ensure data accuracy, integrity, and compliance"
+    ],
+    "parser_signals": {
+      "resume_summary_present": false,
+      "resume_experience_count": 1,
+      "resume_education_count": 5,
+      "job_requirement_count": 11
+    }
+  },
+  "match_score": 60.0,
+  "qualification_score": 42.4
+}
