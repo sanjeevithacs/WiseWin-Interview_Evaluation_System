@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.git/
+.env
+recordings/
+uploads/
+analysis_history/
+interview_sessions/
+server.err.log
+server.out.log

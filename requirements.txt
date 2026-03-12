@@ -5,18 +5,6 @@ pymupdf
 PyPDF2
 python-docx
 
-# NLP and Text Processing
-spacy
-textblob
-
-# Semantic Similarity
-sentence-transformers
-torch
-
-# Data Processing
-pandas
-numpy
-
 # AI/ML API
 groq
 
@@ -36,10 +24,3 @@ Werkzeug==2.3.7
 
 # Authentication (built-in modules)
 # No additional packages needed - uses hashlib, json, os, sys, dataclasses, datetime
-
-# Computer Vision (for Level 1 CV integration)
-opencv-python
-mediapipe
-
-# Speech Processing (for Level 1 STT integration)
-speechrecognition
