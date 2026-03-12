@@ -43,4 +43,3 @@ mediapipe
 
 # Speech Processing (for Level 1 STT integration)
 speechrecognition
-pyaudio
